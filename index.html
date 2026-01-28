@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Y Language · The Scripting Layer of Zhiye Platform</title>
-    <meta name="description" content="Y Language is the core scripting language of the Zhiye Platform, designed to map natural language to deterministic actions for teachable, accurate human-machine interaction.">
+    <title>支叶平台 (Zhiye Platform)：会学习的人机交互内核</title>
+    <meta name="description" content="支叶是一个会学习的交互系统内核。它通过其内置的Y语言，让您能用自然语言'教导'机器理解并执行复杂任务，无需重新编译。">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
@@ -63,24 +63,43 @@
             background: transparent; color: var(--primary); border-color: var(--primary);
         }
         .btn-outline:hover { background: var(--primary); color: white; }
-        .philosophy {
+        .paradigm {
             background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
-            border-left: 4px solid var(--primary); padding: 2rem;
-            margin: 2.5rem 0; border-radius: 0 var(--radius) var(--radius) 0;
+            border-left: 4px solid var(--primary); padding: 2.5rem;
+            margin: 3rem 0; border-radius: 0 var(--radius) var(--radius) 0;
         }
-        .philosophy h2 { color: var(--primary-dark); margin-bottom: 1rem; }
-        .highlight-grid {
+        .paradigm h2 { color: var(--primary-dark); margin-bottom: 1.5rem; }
+        .core-concept { margin: 3rem 0; }
+        .core-concept h2 { text-align: center; margin-bottom: 2rem; }
+        .concept-grid {
             display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem; margin: 2.5rem 0;
+            gap: 2rem; margin-top: 1.5rem;
+        }
+        .concept-card {
+            background: var(--light); padding: 2rem; border-radius: var(--radius);
+            box-shadow: var(--shadow); transition: var(--transition);
+            text-align: center; border-top: 3px solid transparent;
+        }
+        .concept-card.platform { border-top-color: #10b981; }
+        .concept-card.language { border-top-color: #8b5cf6; }
+        .concept-card:hover { transform: translateY(-5px); }
+        .concept-card i { font-size: 2.5rem; margin-bottom: 1rem; }
+        .concept-card.platform i { color: #10b981; }
+        .concept-card.language i { color: #8b5cf6; }
+        .concept-card h3 { font-size: 1.5rem; margin-bottom: 1rem; }
+        .platform-capabilities { margin: 4rem 0; }
+        .section-title { font-size: 2.2rem; margin: 3rem 0 1.5rem; color: var(--dark); text-align: center; }
+        .highlight-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.8rem; margin: 2.5rem 0;
         }
         .highlight-card {
-            background: var(--light); padding: 2rem; border-radius: var(--radius);
-            box-shadow: var(--shadow); transition: var(--transition); border-top: 3px solid var(--primary);
+            background: var(--light); padding: 1.8rem; border-radius: var(--radius);
+            box-shadow: var(--shadow); transition: var(--transition); text-align: center;
         }
-        .highlight-card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
-        .highlight-card i { font-size: 2.5rem; color: var(--primary); margin-bottom: 1rem; }
-        .highlight-card h3 { font-size: 1.4rem; margin-bottom: 0.8rem; }
-        .section-title { font-size: 2.2rem; margin: 3rem 0 1.5rem; color: var(--dark); }
+        .highlight-card:hover { transform: translateY(-3px); }
+        .highlight-card i { font-size: 2.2rem; color: var(--primary); margin-bottom: 1rem; }
+        .highlight-card h3 { font-size: 1.3rem; margin-bottom: 0.8rem; }
         footer {
             margin-top: auto; padding-top: 3rem; text-align: center;
             color: var(--gray); font-size: 0.95rem; border-top: 1px solid var(--gray-light);
@@ -92,174 +111,295 @@
 </head>
 <body>
     <nav class="navbar">
-        <a href="#" class="logo">Y Language</a>
+        <a href="#" class="logo">支叶•融合</a>
         <div class="lang-switcher" id="langSwitch">
             <i class="fas fa-globe"></i>
-            <span id="currentLang">English</span>
+            <span id="currentLangText">English</span>
         </div>
     </nav>
 
     <main>
-        <section class="hero">
-            <h1 id="heroTitle">The Y Language</h1>
-            <p class="tagline" id="heroTagline">The Scripting Layer of the Zhiye Platform · 支叶平台的交互脚本层</p>
-            <p class="slogan" id="heroSlogan">Teach it once, interact accurately. · 一次教导，准确交互。</p>
-            <div class="cta-buttons">
-                <a href="https://github.com/zhiye-lang/nlurh" class="btn" id="btnGitHub"><i class="fab fa-github"></i> GitHub Repository</a>
-                <a href="#start" class="btn btn-outline" id="btnDocs"><i class="fas fa-book"></i> Quick Start</a>
-            </div>
-        </section>
+        <!-- 中文内容 -->
+        <div class="lang-content" id="lang-zh">
+            <section class="hero">
+                <h1>支叶平台</h1>
+                <p class="tagline">会学习的人机交互内核，及其可教学的语言接口——Y语言</p>
+                <p class="slogan">无需重新编译，用对话赋予机器新能力</p>
+                <div class="cta-buttons">
+                    <a href="https://gitee.com/sz-ai/nlurh" class="btn" id="btnGitHub">
+                        <i class="fab fa-github"></i> Gitee 仓库
+                    </a>
+                    <a href="#start" class="btn btn-outline">
+                        <i class="fas fa-play-circle"></i> 立即体验
+                    </a>
+                </div>
+            </section>
 
-        <section class="philosophy">
-            <h2 id="philosophyTitle">💡 The Teachable Interface Paradigm</h2>
-            <p id="philosophyText1"><strong>Beyond prompts, beyond rigid commands.</strong> Y Language operates on the Zhiye Platform as a malleable layer between your words and machine actions. You “teach” it the correct mapping through examples and rules, enabling it to parse natural language accurately and execute tasks reliably.</p>
-            <p id="philosophyText2"><strong>不同于提示词，也不同于僵硬指令。</strong> Y语言在支叶平台上，作为您的语言与机器行动之间的可塑层运行。您通过示例和规则“教导”它正确的映射关系，使其能够准确解析自然语言并可靠地执行任务。</p>
-        </section>
+            <section class="paradigm">
+                <h2>从"编程"到"教学"：一种新的交互范式</h2>
+                <p>传统自动化需要为每个新功能<strong>重新编码与编译</strong>。在支叶平台上，你通过Y语言<strong>"教导"</strong>系统新指令与新逻辑。平台在运行时理解并记住它们，实现交互能力的<strong>持续生长</strong>。</p>
+            </section>
 
-        <h2 class="section-title" id="capabilitiesTitle">✨ Core Capabilities</h2>
-        <p style="text-align: center; margin-bottom: 1.5rem; color: var(--gray);" id="capabilitiesDesc">我们将强大的能力封装为简单的Y语言接口，让您可以专注于“教导”系统理解您的意图。</p>
-        <div class="highlight-grid">
-            <div class="highlight-card">
-                <i class="fas fa-brain"></i>
-                <h3 id="highlight1Title">Local LLM Integration</h3>
-                <p id="highlight1Text">Natively call models like DeepSeek R1 directly on edge devices for offline, private AI reasoning.</p>
-            </div>
-            <div class="highlight-card">
-                <i class="fas fa-eye"></i>
-                <h3 id="highlight2Title">Multimodal Perception</h3>
-                <p id="highlight2Text">Integrated YOLOv5 object detection and face recognition, giving programs "eyes" to see the world.</p>
-            </div>
-            <div class="highlight-card">
-                <i class="fas fa-microchip"></i>
-                <h3 id="highlight3Title">Hardware Interaction</h3>
-                <p id="highlight3Text">Direct control of the physical world via UART, GPIO, and other interfaces. Deployed on RV1106.</p>
-            </div>
-            <div class="highlight-card">
-                <i class="fas fa-comments"></i>
-                <h3 id="highlight4Title">Natural Language Interface</h3>
-                <p id="highlight4Text">Parse complex natural language instructions into executable task flows for intuitive human-AI collaboration.</p>
-            </div>
+            <section class="core-concept">
+                <h2>核心构成：平台与语言</h2>
+                <div class="concept-grid">
+                    <div class="concept-card platform">
+                        <i class="fas fa-seedling"></i>
+                        <h3>支叶平台</h3>
+                        <p><strong>可学习的交互内核</strong>。提供记忆、执行、多模态感知等基础能力，并能在运行时吸收新知识。</p>
+                    </div>
+                    <div class="concept-card language">
+                        <i class="fas fa-comments"></i>
+                        <h3>Y语言</h3>
+                        <p><strong>平台的动态接口</strong>。不是需要编译的静态语言，而是可被实时"教学"以扩展平台理解的交互协议。</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="platform-capabilities">
+                <h2 class="section-title">平台为交互注入的能力</h2>
+                <p style="text-align: center; margin-bottom: 2rem; color: var(--gray);">支叶内核提供的底层能力，通过Y语言直接调用</p>
+                <div class="highlight-grid">
+                    <div class="highlight-card">
+                        <i class="fas fa-brain"></i>
+                        <h3>持续学习</h3>
+                        <p>在交互中实时记忆指令、函数与规则，系统越用越智能。</p>
+                    </div>
+                    <div class="highlight-card">
+                        <i class="fas fa-microchip"></i>
+                        <h3>硬件操控</h3>
+                        <p>直接驱动串口、GPIO等，连接物理世界。已部署于RV1106等设备。</p>
+                    </div>
+                    <div class="highlight-card">
+                        <i class="fas fa-eye"></i>
+                        <h3>多模态感知</h3>
+                        <p>集成视觉(YOLOv5)、语音等感知能力，让机器拥有"感官"。</p>
+                    </div>
+                    <div class="highlight-card">
+                        <i class="fas fa-project-diagram"></i>
+                        <h3>自然语言理解</h3>
+                        <p>解析复杂指令，将其映射为可执行的任务流与函数调用。</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="start">
+                <h2 class="section-title">如何开始"教学"？</h2>
+                <div style="display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 3rem; margin: 2.5rem 0;">
+                    <div style="text-align: center; max-width: 200px;">
+                        <div style="font-size: 2.5rem; margin-bottom: 1rem;">1</div>
+                        <h4>运行平台</h4>
+                        <p>启动 <code>_zhiye.exe</code></p>
+                    </div>
+                    <i class="fas fa-arrow-right" style="font-size: 1.5rem; color: var(--gray);"></i>
+                    <div style="text-align: center; max-width: 200px;">
+                        <div style="font-size: 2.5rem; margin-bottom: 1rem;">2</div>
+                        <h4>用Y语言教学</h4>
+                        <p>输入指令或示例</p>
+                    </div>
+                    <i class="fas fa-arrow-right" style="font-size: 1.5rem; color: var(--gray);"></i>
+                    <div style="text-align: center; max-width: 200px;">
+                        <div style="font-size: 2.5rem; margin-bottom: 1rem;">3</div>
+                        <h4>平台学习并反馈</h4>
+                        <p>理解、记忆、执行</p>
+                    </div>
+                    <i class="fas fa-sync-alt" style="font-size: 1.5rem; color: var(--primary);"></i>
+                </div>
+                <div style="background: #f1f5f9; padding: 1.5rem; border-radius: var(--radius); margin-top: 2rem;">
+                    <h3>立即体验</h3>
+                    <p>进入 <code>nlu_run_32bit</code> 或 <code>nlu_run_64bit</code> 目录，双击运行 "<code>_zhiye.exe</code>"。使用密码 <code>1234</code>，即可开始用自然语言与系统对话。</p>
+                    <p style="margin-top: 1rem;"><strong>资源：</strong> 
+                        <a href="https://gitee.com/sz-ai/nlurh/blob/master/README_zh.md">项目文档</a> · 
+                        <a href="https://gitee.com/sz-ai/nlurh/tree/master/examples">示例</a> · 
+                        <a href="https://gitee.com/sz-ai/nlurh/tree/master/docs">组件集成指南</a> · 
+                        <a href="trademark.html">商标指南</a>
+                    </p>
+                </div>
+            </section>
         </div>
 
-        <section id="start">
-            <h2 class="section-title" id="quickStartTitle">🚀 Quick Start</h2>
-            <ul style="font-size: 1.1rem; line-height: 2; padding-left: 1.5rem;">
-                <li>📖 <a href="https://github.com/zhiye-lang/nlurh/blob/main/README.md" id="linkFullDocs">Project README & Full Documentation</a></li>
-                <li>💡 <a href="https://github.com/zhiye-lang/nlurh/tree/main/examples" id="linkExamples">Example Code (examples/)</a></li>
-                <li>🔌 <a href="https://github.com/zhiye-lang/nlurh/tree/main/docs" id="linkIntegration">Component Integration Guide (dll_docs/)</a></li>
-                <li>🛡️ <a href="trademark.html" id="linkTrademark">Trademark Usage Guide</a></li>
-            </ul>
-            <div style="background: #f1f5f9; padding: 1.5rem; border-radius: var(--radius); margin-top: 2rem;">
-                <h3 id="runTitle">Run Zhiye Platform</h3>
-                <p id="runText">Navigate to <code>nlu_run_32bit</code> or <code>nlu_run_64bit</code> directory and double-click "<code>_zhiye.exe</code>". Use password <code>1234</code> to start.</p>
-            </div>
-        </section>
+        <!-- 英文内容 -->
+        <div class="lang-content" id="lang-en" style="display: none;">
+            <section class="hero">
+                <h1>Zhiye Platform</h1>
+                <p class="tagline">A learnable human-computer interaction kernel, and its teachable interface — the Y Language</p>
+                <p class="slogan">No recompilation needed. Empower machines through conversation.</p>
+                <div class="cta-buttons">
+                    <a href="https://github.com/zhiye-lang/nlurh" class="btn" id="btnGitHub-en">
+                        <i class="fab fa-github"></i> GitHub Repository
+                    </a>
+                    <a href="#start" class="btn btn-outline">
+                        <i class="fas fa-play-circle"></i> Try It Now
+                    </a>
+                </div>
+            </section>
+
+            <section class="paradigm">
+                <h2>From "Programming" to "Teaching": A New Interaction Paradigm</h2>
+                <p>Traditional automation requires <strong>re-coding and recompiling</strong> for every new feature. On the Zhiye Platform, you <strong>"teach"</strong> the system new instructions and logic through the Y Language. The platform understands and remembers them at runtime, enabling <strong>continuous growth</strong> of interactive capabilities.</p>
+            </section>
+
+            <section class="core-concept">
+                <h2>Core Components: Platform & Language</h2>
+                <div class="concept-grid">
+                    <div class="concept-card platform">
+                        <i class="fas fa-seedling"></i>
+                        <h3>Zhiye Platform</h3>
+                        <p><strong>The learnable interaction kernel.</strong> Provides foundational capabilities like memory, execution, multimodal perception, and can absorb new knowledge during runtime.</p>
+                    </div>
+                    <div class="concept-card language">
+                        <i class="fas fa-comments"></i>
+                        <h3>Y Language</h3>
+                        <p><strong>The platform's dynamic interface.</strong> Not a static language that needs compilation, but an interactive protocol that can be "taught" in real-time to extend the platform's understanding.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="platform-capabilities">
+                <h2 class="section-title">Capabilities Infused by the Platform</h2>
+                <p style="text-align: center; margin-bottom: 2rem; color: var(--gray);">Underlying powers provided by the Zhiye kernel, directly invoked via the Y Language</p>
+                <div class="highlight-grid">
+                    <div class="highlight-card">
+                        <i class="fas fa-brain"></i>
+                        <h3>Continuous Learning</h3>
+                        <p>Memorizes instructions, functions, and rules in real-time during interaction. The system grows smarter with use.</p>
+                    </div>
+                    <div class="highlight-card">
+                        <i class="fas fa-microchip"></i>
+                        <h3>Hardware Control</h3>
+                        <p>Directly drives UART, GPIO, etc., connecting to the physical world. Deployed on devices like RV1106.</p>
+                    </div>
+                    <div class="highlight-card">
+                        <i class="fas fa-eye"></i>
+                        <h3>Multimodal Perception</h3>
+                        <p>Integrates vision (YOLOv5), speech, and other perceptual abilities, giving machines "senses".</p>
+                    </div>
+                    <div class="highlight-card">
+                        <i class="fas fa-project-diagram"></i>
+                        <h3>Natural Language Understanding</h3>
+                        <p>Parses complex instructions, mapping them into executable task flows and function calls.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="start">
+                <h2 class="section-title">How to Start "Teaching"?</h2>
+                <div style="display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 3rem; margin: 2.5rem 0;">
+                    <div style="text-align: center; max-width: 200px;">
+                        <div style="font-size: 2.5rem; margin-bottom: 1rem;">1</div>
+                        <h4>Run the Platform</h4>
+                        <p>Launch <code>_zhiye.exe</code></p>
+                    </div>
+                    <i class="fas fa-arrow-right" style="font-size: 1.5rem; color: var(--gray);"></i>
+                    <div style="text-align: center; max-width: 200px;">
+                        <div style="font-size: 2.5rem; margin-bottom: 1rem;">2</div>
+                        <h4>Teach with Y Language</h4>
+                        <p>Input instructions or examples</p>
+                    </div>
+                    <i class="fas fa-arrow-right" style="font-size: 1.5rem; color: var(--gray);"></i>
+                    <div style="text-align: center; max-width: 200px;">
+                        <div style="font-size: 2.5rem; margin-bottom: 1rem;">3</div>
+                        <h4>Platform Learns & Responds</h4>
+                        <p>Understands, remembers, executes</p>
+                    </div>
+                    <i class="fas fa-sync-alt" style="font-size: 1.5rem; color: var(--primary);"></i>
+                </div>
+                <div style="background: #f1f5f9; padding: 1.5rem; border-radius: var(--radius); margin-top: 2rem;">
+                    <h3>Try It Now</h3>
+                    <p>Navigate to the <code>nlu_run_32bit</code> or <code>nlu_run_64bit</code> directory and double-click "<code>_zhiye.exe</code>". Use the password <code>1234</code> to start conversing with the system in natural language.</p>
+                    <p style="margin-top: 1rem;"><strong>Resources:</strong> 
+                        <a href="https://github.com/zhiye-lang/nlurh/blob/main/README.md">Project README & Full Documentation</a> · 
+                        <a href="https://github.com/zhiye-lang/nlurh/tree/main/examples">Example Code (examples/)</a> · 
+                        <a href="https://github.com/zhiye-lang/nlurh/tree/main/docs">Component Integration Guide (docs/dll)</a> · 
+                        <a href="trademark.html">Trademark Usage Guide</a>
+                    </p>
+                </div>
+            </section>
+        </div>
     </main>
 
     <footer>
         <div class="footer-links">
-            <a href="https://y-lang.org.cn" id="linkCnSite">中文官网</a> |
-            <a href="https://github.com/kebo521/HCI_NLU" id="linkCommunity">GitHub Community</a> |
-            <a href="mailto:trademark@y-lang.tech" id="linkContact">Contact</a>
+            <a href="https://y-lang.org.cn" class="lang-link" data-zh="https://y-lang.org.cn" data-en="https://y-lang.org.cn">中文官网</a>
+            |
+            <a href="https://github.com/zhiye-lang/nlurh" class="lang-link" data-zh="https://gitee.com/sz-ai/nlurh" data-en="https://github.com/zhiye-lang/nlurh">GitHub 项目</a>
+            |
+            <a href="mailto:trademark@y-lang.tech" class="lang-link" data-zh="mailto:trademark@y-lang.tech" data-en="mailto:trademark@y-lang.tech">联系我们</a>
         </div>
-        <p id="footerCopyright">© 2024 Changsha Sizhi Information Technology Co., Ltd. · The Zhiye (支叶) trademark holder.</p>
-        <p id="footerCall">A truly open-source project. Contributions are warmly welcomed!</p>
+        <p class="lang-text" data-zh="© 2024 长沙思知信息科技有限公司 · 支叶（Zhiye）平台" data-en="© 2024 Changsha Sizhi Information Technology Co., Ltd. · The Zhiye Platform">
+            © 2024 长沙思知信息科技有限公司 · 支叶（Zhiye）平台
+        </p>
+        <p class="lang-text" data-zh="构建越用越聪明的交互系统。" data-en="Building interaction systems that grow wiser with use.">
+            构建越用越聪明的交互系统。
+        </p>
     </footer>
 
     <script>
-        const translations = {
-            'zh-CN': {
-                'currentLang': 'English',
-                'heroTitle': 'Y 语言',
-                'heroTagline': '支叶融合平台的交互脚本层',
-                'heroSlogan': '一次教导，准确交互。',
-                'btnGitHub': '<i class="fab fa-github"></i> GitHub 仓库',
-                'btnDocs': '<i class="fas fa-book"></i> 快速开始',
-                'philosophyTitle': '💡 可教导的交互范式',
-                'philosophyText1': '不同于提示词，也不同于僵硬指令，Y语言在支叶平台上，作为您的语言与机器行动之间的可塑层运行。您通过示例和规则“教导”它正确的映射关系，使其能够准确解析自然语言并可靠地执行任务。',
-                'philosophyText2': '',
-                'capabilitiesTitle': '✨ 核心能力',
-                'capabilitiesDesc': '我们将强大的能力封装为简单的Y语言接口，让您可以专注于“教导”系统理解您的意图。',
-                'highlight1Title': '本地大模型集成',
-                'highlight1Text': '在边缘设备上原生调用 DeepSeek R1 等模型，实现离线、私密的AI推理。',
-                'highlight2Title': '多模态感知',
-                'highlight2Text': '集成 YOLOv5 目标检测与人脸识别，赋予程序“看见”世界的能力。',
-                'highlight3Title': '硬件交互',
-                'highlight3Text': '通过串口、GPIO等接口直接控制物理世界。已成功部署于RV1106等设备。',
-                'highlight4Title': '自然语言界面',
-                'highlight4Text': '将复杂的自然语言指令解析为可执行的任务流，实现直观的人机协作。',
-                'quickStartTitle': '🚀 快速开始',
-                'linkFullDocs': '项目说明与完整文档',
-                'linkExamples': '示例代码 (examples/)',
-                'linkIntegration': '组件集成指南 (dll_docs/)',
-                'linkTrademark': '商标使用指南',
-                'runTitle': '运行支叶平台',
-                'runText': '进入 nlu_run_32bit 或 nlu_run_64bit 目录，双击运行 “_zhiye.exe”。使用密码 1234 即可开始。',
-                'linkCnSite': '中文官网',
-                'linkCommunity': 'GitHub 社区',
-                'linkContact': '联系我们',
-                'footerCopyright': '© 2024 长沙思知信息科技有限公司 · 支叶（Zhiye）商标持有者',
-                'footerCall': '一个真正的开源项目，热忱欢迎您的贡献！'
-            },
-            'en': {
-                'currentLang': '中文',
-                'heroTitle': 'The Y Language',
-                'heroTagline': 'The Scripting Layer of the Zhiye Platform ',
-                'heroSlogan': 'Teach it once, interact accurately. ',
-                'btnGitHub': '<i class="fab fa-github"></i> GitHub Repository',
-                'btnDocs': '<i class="fas fa-book"></i> Quick Start',
-                'philosophyTitle': '💡 The Teachable Interface Paradigm',
-                'philosophyText1': 'Beyond prompts, beyond rigid commands, Y Language operates on the Zhiye Platform as a malleable layer between your words and machine actions. You “teach” it the correct mapping through examples and rules, enabling it to parse natural language accurately and execute tasks reliably.',
-                'philosophyText2': '',
-                'capabilitiesTitle': '✨ Core Capabilities',
-                'capabilitiesDesc': 'We encapsulate powerful capabilities into simple Y Language interfaces, allowing you to focus on “teaching” the system to understand your intent.',
-                'highlight1Title': 'Local LLM Integration',
-                'highlight1Text': 'Natively call models like DeepSeek R1 directly on edge devices for offline, private AI reasoning.',
-                'highlight2Title': 'Multimodal Perception',
-                'highlight2Text': 'Integrated YOLOv5 object detection and face recognition, giving programs "eyes" to see the world.',
-                'highlight3Title': 'Hardware Interaction',
-                'highlight3Text': 'Direct control of the physical world via UART, GPIO, and other interfaces. Deployed on RV1106.',
-                'highlight4Title': 'Natural Language Interface',
-                'highlight4Text': 'Parse complex natural language instructions into executable task flows for intuitive human-AI collaboration.',
-                'quickStartTitle': '🚀 Quick Start',
-                'linkFullDocs': 'Project README & Full Documentation',
-                'linkExamples': 'Example Code (examples/)',
-                'linkIntegration': 'Component Integration Guide (dll_docs/)',
-                'linkTrademark': 'Trademark Usage Guide',
-                'runTitle': 'Run Zhiye Platform',
-                'runText': 'Navigate to nlu_run_32bit or nlu_run_64bit directory and double-click "_zhiye.exe". Use password 1234 to start.',
-                'linkCnSite': 'Chinese Site',
-                'linkCommunity': 'GitHub Community',
-                'linkContact': 'Contact',
-                'footerCopyright': '© 2024 Changsha Sizhi Information Technology Co., Ltd. · The Zhiye (支叶) trademark holder.',
-                'footerCall': 'A truly open-source project. Contributions are warmly welcomed!'
-            }
-        };
-
         let currentLang = localStorage.getItem('preferredLang') || (navigator.language.startsWith('zh') ? 'zh-CN' : 'en');
-        if (!translations[currentLang]) currentLang = 'en';
-
-        function applyLanguage(lang) {
-            Object.keys(translations[lang]).forEach(key => {
-                const element = document.getElementById(key);
-                if (element) {
-                    if (key.startsWith('btn') && element.tagName === 'A') {
-                        element.innerHTML = translations[lang][key];
-                    } else {
-                        element.textContent = translations[lang][key];
+        
+        function switchLanguage(lang) {
+            // 隐藏所有语言内容
+            document.querySelectorAll('.lang-content').forEach(el => {
+                el.style.display = 'none';
+            });
+            
+            // 显示目标语言内容
+            const targetId = lang === 'zh-CN' ? 'lang-zh' : 'lang-en';
+            document.getElementById(targetId).style.display = 'block';
+            
+            // 更新切换器文字
+            document.getElementById('currentLangText').textContent = 
+                lang === 'zh-CN' ? 'English' : '中文';
+            
+            // 更新HTML lang属性
+            document.documentElement.lang = lang === 'zh-CN' ? 'zh-CN' : 'en';
+            
+            // 更新所有带 data-zh/data-en 属性的链接和文本
+            document.querySelectorAll('.lang-link').forEach(el => {
+                const url = lang === 'zh-CN' ? el.getAttribute('data-zh') : el.getAttribute('data-en');
+                el.href = url;
+            });
+            
+            document.querySelectorAll('.lang-text').forEach(el => {
+                const text = lang === 'zh-CN' ? el.getAttribute('data-zh') : el.getAttribute('data-en');
+                el.textContent = text;
+            });
+            
+            // 更新主按钮的链接（中文用Gitee，英文用GitHub）
+            const mainBtn = document.querySelector('.cta-buttons .btn');
+            if (mainBtn) {
+                if (lang === 'zh-CN') {
+                    mainBtn.href = 'https://gitee.com/sz-ai/nlurh';
+                    if (mainBtn.querySelector('i.fab.fa-github')) {
+                        mainBtn.innerHTML = '<i class="fab fa-github"></i> Gitee 仓库';
+                    }
+                } else {
+                    mainBtn.href = 'https://github.com/zhiye-lang/nlurh';
+                    if (mainBtn.querySelector('i.fab.fa-github')) {
+                        mainBtn.innerHTML = '<i class="fab fa-github"></i> GitHub Repository';
                     }
                 }
-            });
-            document.documentElement.lang = lang;
+            }
+            
+            // 保存偏好
             localStorage.setItem('preferredLang', lang);
+            
+            // 更新当前语言变量
+            currentLang = lang;
         }
-
+        
+        // 绑定切换事件
         document.getElementById('langSwitch').addEventListener('click', () => {
-            currentLang = (currentLang === 'zh-CN') ? 'en' : 'zh-CN';
-            applyLanguage(currentLang);
+            const newLang = currentLang === 'zh-CN' ? 'en' : 'zh-CN';
+            switchLanguage(newLang);
         });
-
-        window.addEventListener('DOMContentLoaded', () => applyLanguage(currentLang));
+        
+        // 页面加载时应用语言
+        window.addEventListener('DOMContentLoaded', () => {
+            // 确保默认显示中文或英文
+            const langToApply = currentLang === 'zh-CN' ? 'zh-CN' : 'en';
+            switchLanguage(langToApply);
+        });
     </script>
 </body>
 </html>
