@@ -1,3 +1,4 @@
 title: "支叶 (Y语言) - 自然语言人机交互平台"
 description: "一个从自然语言理解到物理世界感知的全栈边缘AI交互范式。"
-theme: jekyll-theme-minimal 
+# theme: jekyll-theme-minimal
+# 提示：若想使用Jekyll主题，请取消上面的注释并确保根目录没有自定义的index.html
