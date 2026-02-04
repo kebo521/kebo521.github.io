@@ -1,12 +1,11 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trademark Guidelines - Y Language & Zhiye Platform</title>
-    <meta name="description" content="Trademark usage guidelines for Zhiye (支叶) and Y Language.">
+    <meta name="description" content="Trademark usage guidelines for Zhiye (支叶) and Y Language. Code is MIT-licensed, but trademarks are protected.">
     <style>
-        /* 复用官网的样式，确保一致 */
         :root {
             --primary: #2563eb;       --primary-dark: #1d4ed8;
             --dark: #0f172a;          --light: #f8fafc;
@@ -29,11 +28,24 @@
         th, td { border: 1px solid var(--gray-light); padding: 0.75rem; text-align: left; }
         th { background-color: var(--light); }
         code { background: #f1f5f9; padding: 0.2rem 0.4rem; border-radius: 4px; font-family: monospace; }
-        .notice { background: #f0f9ff; border-left: 4px solid var(--primary); padding: 1rem 1.5rem; margin: 1.5rem 0; border-radius: 0 var(--radius) var(--radius) 0; }
+        .notice { 
+            background: #f0f9ff; 
+            border: 1px solid #bae6fd;
+            border-left: 4px solid var(--primary); 
+            padding: 1rem 1.5rem; 
+            margin: 1.5rem 0; 
+            border-radius: var(--radius); 
+        }
+        .notice strong { color: var(--primary-dark); }
         footer {
             margin-top: 4rem; padding-top: 2rem; text-align: center;
             color: var(--gray); font-size: 0.9rem; border-top: 1px solid var(--gray-light);
         }
+        ul, ol { margin-left: 1.5rem; margin-bottom: 1.5rem; }
+        li { margin-bottom: 0.5rem; }
+        a { color: var(--primary); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .badge { display: inline-block; padding: 0.25rem 0.75rem; background: #dcfce7; color: #166534; border-radius: 20px; font-size: 0.85rem; margin-right: 0.5rem; }
     </style>
 </head>
 <body>
@@ -42,64 +54,83 @@
     </nav>
 
     <main class="content">
-        <h1>📄 Trademark Usage Guidelines for Zhiye Platform</h1>
+        <h1>📄 Trademark Usage Guidelines</h1>
+        <p class="subtitle">Guidelines for using Zhiye (支叶) and Y Language trademarks</p>
 
         <div class="notice">
-            <p>ℹ️ <strong>This policy applies ONLY to trademark usage.</strong><br>
-            <strong>Code usage is governed solely by the <a href="https://github.com/kebo521/HCI_NLU/blob/main/LICENSE">MIT License</a>.</strong><br>
-            You may freely use, modify, and distribute the code per MIT terms.</p>
+            <p><strong>Important Distinction:</strong></p>
+            <p>✅ <strong>Code is MIT-licensed</strong>: You may freely use, modify, and distribute the code under the terms of the <a href="https://github.com/kebo521/HCI_NLU/blob/main/LICENSE">MIT License</a>.</p>
+            <p>⚠️ <strong>Trademarks are protected</strong>: The following guidelines apply only to the use of trademarks, names, and logos.</p>
         </div>
 
-        <h2>What‘s Protected</h2>
+        <h2>Protected Trademarks</h2>
         <table>
             <thead>
-                <tr><th>Mark</th><th>Owner</th><th>Status</th></tr>
+                <tr><th>Mark</th><th>Owner</th><th>Status</th><th>Notes</th></tr>
             </thead>
             <tbody>
-                <tr><td><strong>Zhiye (支叶)</strong></td><td>Changsha Sizhi Information Technology Co., Ltd.</td><td>Registered Trademark</td></tr>
-                <tr><td><strong>Y Language</strong></td><td>Changsha Sizhi Information Technology Co., Ltd.</td><td>Common Law Trademark</td></tr>
+                <tr>
+                    <td><strong>Zhiye (支叶)</strong></td>
+                    <td>Changsha Sizhi Information Technology Co., Ltd.</td>
+                    <td><span class="badge">Registered</span></td>
+                    <td>Registered trademark in China</td>
+                </tr>
+                <tr>
+                    <td><strong>Y Language</strong></td>
+                    <td>Changsha Sizhi Information Technology Co., Ltd.</td>
+                    <td><span class="badge">Common Law</span></td>
+                    <td>Protected under common law trademark rights</td>
+                </tr>
             </tbody>
         </table>
 
-        <h2>✅ Welcome Usage (No Permission Needed)</h2>
-        <p>You may say:</p>
+        <h2>✅ Permitted Uses (No Permission Required)</h2>
+        <p>You may use our trademarks to:</p>
         <ul>
-            <li>"This project uses <strong>Y Language</strong> from the Zhiye Platform"</li>
-            <li>"Built with the open-source <strong>Y Language</strong> interpreter"</li>
-            <li>"Compatible with <strong>Zhiye Platform</strong> scripts"</li>
+            <li>Accurately describe that your project uses <strong>Y Language</strong> or is compatible with <strong>Zhiye Platform</strong></li>
+            <li>Refer to the <strong>Y Language</strong> interpreter in documentation, tutorials, or blog posts</li>
+            <li>State compatibility with <strong>Zhiye Platform</strong> scripts or APIs</li>
         </ul>
-        <p><strong>Always include attribution:</strong><br>
-        <code>Y Language is a trademark of Changsha Sizhi Information Technology Co., Ltd.</code></p>
+        
+        <div class="notice">
+            <p><strong>Required Attribution:</strong><br>
+            When using our trademarks, please include the following attribution statement:</p>
+            <code>Y Language and Zhiye are trademarks of Changsha Sizhi Information Technology Co., Ltd.</code>
+        </div>
 
-        <h2>❌ Usage Requiring Prior Permission</h2>
-        <p>Do NOT (without written permission):</p>
+        <h2>❌ Uses Requiring Written Permission</h2>
+        <p>You must obtain prior written permission for:</p>
         <ul>
-            <li>Name your project "Y Language Pro", "Zhiye Studio", etc.</li>
-            <li>Use Zhiye/Y Language logos as your project logo</li>
-            <li>Claim official endorsement without authorization</li>
-            <li>Register domain names like <code>y-language.com</code></li>
+            <li>Using "Y Language" or "Zhiye" (or variations like "YLang", "支叶") in your project, product, or company name</li>
+            <li>Using our logos as your project's logo or primary branding</li>
+            <li>Creating derivative names (e.g., "Y Language Pro", "Zhiye Studio", "YLang Plus")</li>
+            <li>Claiming official partnership, endorsement, or certification</li>
+            <li>Registering domain names containing our trademarks (e.g., y-language.com, zhìyè.net)</li>
+            <li>Using trademarks in a way that suggests affiliation when none exists</li>
         </ul>
 
-        <h2>🌟 We Encourage</h2>
+        <h2>🌟 Community-Friendly Uses We Encourage</h2>
         <ul>
-            <li><strong>Sharing use cases</strong>: Showcase how you‘ve used Y Language in your project‘s README.</li>
-            <li><strong>Feedback & contributions</strong>: Help improve Y Language via GitHub Issues and Pull Requests.</li>
-            <li><strong>Spreading knowledge</strong>: Write tutorials, blog posts, or make videos to help others learn.</li>
+            <li><strong>Showcasing your work</strong>: Share how you're using Y Language in your project's README or documentation.</li>
+            <li><strong>Contributing to the ecosystem</strong>: Submit bug reports, feature requests, or pull requests on GitHub.</li>
+            <li><strong>Creating educational content</strong>: Write tutorials, record videos, or host workshops about Y Language.</li>
+            <li><strong>Building compatible tools</strong>: Develop IDE extensions, linters, or other tools that work with Y Language.</li>
         </ul>
 
-        <h2>Questions?</h2>
-        <p>Contact: <a href="mailto:trademark@y-lang.tech">trademark@y-lang.tech</a><br>
-        <em>(For code usage questions, refer to the LICENSE or open an issue on GitHub.)</em></p>
+        <h2>Questions & Permission Requests</h2>
+        <p>For trademark-related inquiries or permission requests, please contact:</p>
+        <p><strong>Email:</strong> <a href="mailto:trademark@y-lang.tech">trademark@y-lang.tech</a></p>
+        <p><em>For code-related questions, please refer to the MIT License or open an issue on GitHub.</em></p>
 
         <hr>
         <p><small>Last Updated: January 28, 2026<br>
-        © 2024 Changsha Sizhi Information Technology Co., Ltd.<br>
-        <em>This policy does not restrict code usage under the MIT License.</em></small></p>
+        © 2024-2026 Changsha Sizhi Information Technology Co., Ltd.<br>
+        <em>These guidelines only apply to trademark usage. Code usage is governed solely by the MIT License.</em></small></p>
     </main>
 
     <footer>
-        <p>© 2024 Changsha Sizhi Information Technology Co., Ltd. · The Zhiye (支叶) trademark holder.</p>
-        <p><a href="index.html">Home</a> | <a href="https://github.com/kebo521/HCI_NLU">GitHub Project</a></p>
+        <p>© 2024 Changsha Sizhi Information Technology Co., Ltd. · All rights reserved.</p>
+        <p><a href="index.html">Home</a> | <a href="https://github.com/kebo521/HCI_NLU">GitHub Project</a> | <a href="trademark-zh.html">中文版本</a></p>
     </footer>
 </body>
 </html>
