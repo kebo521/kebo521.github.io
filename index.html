@@ -183,6 +183,39 @@
                 </div>
             </section>
 
+            <section class="platform-capabilities" id="ai-skills">
+                <h2 class="section-title">AI 与支叶 — 让 AI 拥有眼耳手脚</h2>
+                <p style="text-align: center; margin-bottom: 2rem; color: var(--gray);">AI 通过 Y 语言直接操控支叶平台，再通过开发 C++ 扩展库持续进化能力边界。所有扩展在同一进程运行，模块间数据零拷贝直传。</p>
+                <div class="highlight-grid">
+                    <div class="highlight-card">
+                        <i class="fas fa-hand-sparkles"></i>
+                        <h3>AI 调用支叶</h3>
+                        <p>AI 通过 <strong>Y 语言</strong>直接操控摄像头、串口、UI、语音、加密等已有能力——<br>看到画面、听到声音、画出结果、说出结论，AI 在物理世界获得"眼耳手脚"。</p>
+                    </div>
+                    <div class="highlight-card">
+                        <i class="fas fa-seedling"></i>
+                        <h3>AI 进化支叶</h3>
+                        <p>AI 协助编写 <strong>C++ 扩展 DLL</strong>，加载新模型、接入新硬件——<br>人脸识别、手势识别、YOLO 检测，支叶的能力随 AI 持续生长。</p>
+                    </div>
+                </div>
+                <div style="background: #f1f5f9; padding: 1.5rem; border-radius: var(--radius); margin-top: 1.5rem;">
+                    <h3>接入 AI 助手</h3>
+                    <div style="display: flex; flex-wrap: wrap; gap: 1.5rem; justify-content: center;">
+                        <div style="flex: 1; min-width: 250px; background: white; padding: 1.2rem; border-radius: 6px;">
+                            <i class="fas fa-terminal" style="font-size: 1.5rem; color: #2563eb; margin-bottom: 0.5rem;"></i>
+                            <h4>Claude Code</h4>
+                            <p style="font-size: 0.9rem; color: var(--gray);">终端运行 <code>claude</code>，提到 <strong>支叶</strong> 或 <code>/nlu</code> 加载知识库</p>
+                        </div>
+                        <div style="flex: 1; min-width: 250px; background: white; padding: 1.2rem; border-radius: 6px;">
+                            <i class="fas fa-robot" style="font-size: 1.5rem; color: #8b5cf6; margin-bottom: 0.5rem;"></i>
+                            <h4>WorkBuddy</h4>
+                            <p style="font-size: 0.9rem; color: var(--gray);">打开 <code>nlurh/</code> 文件夹，提到 <strong>支叶</strong> 即自动加载</p>
+                        </div>
+                    </div>
+                    <p style="text-align: center; margin-top: 1rem; font-size: 0.85rem; color: var(--gray);">项目内置 <strong>Skill 文件</strong>（<code>.claude/skills/</code> 和 <code>.workbuddy/skills/</code>），从 Gitee 下载后开箱即用，无需配置</p>
+                </div>
+            </section>
+
             <section id="start">
                 <h2 class="section-title">如何开始"教学"？</h2>
                 <div style="display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 3rem; margin: 2.5rem 0;">
@@ -214,33 +247,6 @@
                         <a href="https://gitee.com/sz-ai/nlurh/tree/master/docs">组件集成指南</a> · 
                         <a href="trademark_zh.html">商标指南</a>
                     </p>
-                </div>
-            </section>
-
-            <section class="platform-capabilities" id="ai-skills">
-                <h2 class="section-title">AI 辅助开发（Skill 工具）</h2>
-                <p style="text-align: center; margin-bottom: 2rem; color: var(--gray);">项目内置 AI 编程助手的专用知识库，从 Gitee 下载后开箱即用</p>
-                <div class="highlight-grid">
-                    <div class="highlight-card">
-                        <i class="fas fa-terminal"></i>
-                        <h3>Claude Code</h3>
-                        <p>终端进入目录运行 <code>claude</code>，提到 <strong>支叶</strong> 或输入 <code>/nlu</code> 即可加载全知识库，涵盖 Y语言语法、全部 DLL 接口、编译自测工作流。</p>
-                    </div>
-                    <div class="highlight-card">
-                        <i class="fas fa-robot"></i>
-                        <h3>WorkBuddy</h3>
-                        <p>用 WorkBuddy 打开 <code>nlurh/</code> 文件夹，提到 <strong>支叶</strong> 即自动加载 Skill。支持国内版和国际版。</p>
-                    </div>
-                </div>
-                <div style="background: #f1f5f9; padding: 1.5rem; border-radius: var(--radius); margin-top: 1.5rem;">
-                    <h3>Skill 能力范围</h3>
-                    <ul style="list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.5rem;">
-                        <li><i class="fas fa-check" style="color: #10b981;"></i> Y 语言语法速查</li>
-                        <li><i class="fas fa-check" style="color: #10b981;"></i> 全部 DLL 接口查询</li>
-                        <li><i class="fas fa-check" style="color: #10b981;"></i> 编译 → 部署 → 自测</li>
-                        <li style="grid-column: 1 / -1;"><i class="fas fa-puzzle-piece" style="color: #8b5cf6;"></i> 外部扩展库：UI画布、Mark图形标记、TextFlow文本处理、TTS语音、ASR语音识别、UART串口、摄像头采集、加密/HASH/证书 等</li>
-                        <li style="grid-column: 1 / -1;"><i class="fas fa-cube" style="color: #f59e0b;"></i> C/C++ DLL 自定义开发模板</li>
-                    </ul>
                 </div>
             </section>
         </div>
@@ -309,6 +315,39 @@
                 </div>
             </section>
 
+            <section class="platform-capabilities" id="ai-skills-en">
+                <h2 class="section-title">AI × Zhiye — Giving AI Eyes, Ears, Hands &amp; Feet</h2>
+                <p style="text-align: center; margin-bottom: 2rem; color: var(--gray);">AI controls Zhiye via Y Language, then extends its reach through C++ extensions. All modules run in the same process — data flows between them with zero copy.</p>
+                <div class="highlight-grid">
+                    <div class="highlight-card">
+                        <i class="fas fa-hand-sparkles"></i>
+                        <h3>AI Calls Zhiye</h3>
+                        <p>AI uses <strong>Y Language</strong> to directly control cameras, serial ports, UI, speech, encryption, and more —<br>seeing, hearing, drawing, speaking. AI gains "eyes, ears, hands, and feet" in the physical world.</p>
+                    </div>
+                    <div class="highlight-card">
+                        <i class="fas fa-seedling"></i>
+                        <h3>AI Evolves Zhiye</h3>
+                        <p>AI helps write <strong>C++ extension DLLs</strong>, loading new models, connecting new hardware —<br>face recognition, gesture recognition, YOLO detection. Zhiye's capabilities grow continuously with AI.</p>
+                    </div>
+                </div>
+                <div style="background: #f1f5f9; padding: 1.5rem; border-radius: var(--radius); margin-top: 1.5rem;">
+                    <h3>Connect Your AI Assistant</h3>
+                    <div style="display: flex; flex-wrap: wrap; gap: 1.5rem; justify-content: center;">
+                        <div style="flex: 1; min-width: 250px; background: white; padding: 1.2rem; border-radius: 6px;">
+                            <i class="fas fa-terminal" style="font-size: 1.5rem; color: #2563eb; margin-bottom: 0.5rem;"></i>
+                            <h4>Claude Code</h4>
+                            <p style="font-size: 0.9rem; color: var(--gray);">Run <code>claude</code> in terminal, mention <strong>Zhiye</strong> or type <code>/nlu</code></p>
+                        </div>
+                        <div style="flex: 1; min-width: 250px; background: white; padding: 1.2rem; border-radius: 6px;">
+                            <i class="fas fa-robot" style="font-size: 1.5rem; color: #8b5cf6; margin-bottom: 0.5rem;"></i>
+                            <h4>WorkBuddy</h4>
+                            <p style="font-size: 0.9rem; color: var(--gray);">Open <code>nlurh/</code> folder, mention <strong>Zhiye</strong> to auto-load</p>
+                        </div>
+                    </div>
+                    <p style="text-align: center; margin-top: 1rem; font-size: 0.85rem; color: var(--gray);">Built-in <strong>Skill files</strong> (<code>.claude/skills/</code> &amp; <code>.workbuddy/skills/</code>) — works out of the box after cloning, no configuration needed</p>
+                </div>
+            </section>
+
             <section id="start-en">
                 <h2 class="section-title">How to Start "Teaching"?</h2>
                 <div style="display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 3rem; margin: 2.5rem 0;">
@@ -340,33 +379,6 @@
                         <a href="https://github.com/zhiye-lang/nlurh/tree/main/docs">Component Integration Guide (docs/dll)</a> · 
                         <a href="trademark.html">Trademark Usage Guide</a>
                     </p>
-                </div>
-            </section>
-
-            <section class="platform-capabilities" id="ai-skills-en">
-                <h2 class="section-title">AI-Assisted Development (Skill Tools)</h2>
-                <p style="text-align: center; margin-bottom: 2rem; color: var(--gray);">Built-in AI coding assistant knowledge base — zero config, works out of the box after cloning from GitHub</p>
-                <div class="highlight-grid">
-                    <div class="highlight-card">
-                        <i class="fas fa-terminal"></i>
-                        <h3>Claude Code</h3>
-                        <p>Run <code>claude</code> in the project directory, mention <strong>Zhiye</strong> or type <code>/nlu</code> to load the full knowledge base: Y Language syntax, all DLL interfaces, build & test workflows.</p>
-                    </div>
-                    <div class="highlight-card">
-                        <i class="fas fa-robot"></i>
-                        <h3>WorkBuddy</h3>
-                        <p>Open the <code>nlurh/</code> folder with WorkBuddy, mention <strong>Zhiye</strong> to auto-load the Skill. Available for both domestic and international editions.</p>
-                    </div>
-                </div>
-                <div style="background: #f1f5f9; padding: 1.5rem; border-radius: var(--radius); margin-top: 1.5rem;">
-                    <h3>Skill Capabilities</h3>
-                    <ul style="list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.5rem;">
-                        <li><i class="fas fa-check" style="color: #10b981;"></i> Y Language syntax reference</li>
-                        <li><i class="fas fa-check" style="color: #10b981;"></i> All DLL interface lookup</li>
-                        <li><i class="fas fa-check" style="color: #10b981;"></i> Build → Deploy → Test workflow</li>
-                        <li style="grid-column: 1 / -1;"><i class="fas fa-puzzle-piece" style="color: #8b5cf6;"></i> Extension libraries: UI Canvas, Mark graphics, TextFlow text processing, TTS speech, ASR voice recognition, UART serial, Camera capture, Encryption/HASH/Certificate, and more</li>
-                        <li style="grid-column: 1 / -1;"><i class="fas fa-cube" style="color: #f59e0b;"></i> C/C++ DLL custom development template</li>
-                    </ul>
                 </div>
             </section>
         </div>
