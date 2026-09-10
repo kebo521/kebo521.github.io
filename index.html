@@ -1,17 +1,50 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="zh-CN" data-page-node-id="fgVZy3j8bCFBP4YmXFnPqG">
+<head data-page-node-id="R5RCnuAwg1KtJpGsq3IUbh">
+    <meta charset="UTF-8" data-page-node-id="0dbyFsyYIsN2W3msmzx7Kg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" data-page-node-id="LRDgCKNCGSE9jJhttGHpx7">
     <title>支叶平台 (Zhiye Platform)：会学习的人机交互内核</title>
-    <meta name="description" content="支叶是一个会学习的交互系统内核。它通过其内置的Y语言，让您能用自然语言'教导'机器理解并执行复杂任务，无需重新编译。">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta name="description" content="支叶是一个会学习的交互系统内核。它通过其内置的Y语言，让您能用自然语言'教导'机器理解并执行复杂任务，无需重新编译。" data-page-node-id="E7RPqaU4lIAP0C6GhoTeGT">
+    <!-- 内联 SVG 图标（替代 Font Awesome CDN，避免外网阻塞） -->
+    <style>
+        i.fas, i.fab {
+            display: inline-block; width: 1em; height: 1em; line-height: 1;
+            background-color: currentColor;
+            -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat;
+            -webkit-mask-position: center; mask-position: center;
+            -webkit-mask-size: contain; mask-size: contain;
+            -webkit-mask-image: var(--i); mask-image: var(--i);
+            vertical-align: -0.12em; font-style: normal;
+        }
+        .fa-globe{--i:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='1.9' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='9'/%3E%3Cpath d='M3 12h18'/%3E%3Cpath d='M12 3a15 15 0 0 1 0 18 15 15 0 0 1 0-18'/%3E%3C/svg%3E")}
+        .fa-github{--i:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23000'%3E%3Cpath d='M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.3.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.8 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11 11 0 0 1 6 0C18 4.6 19 4.9 19 4.9c.6 1.6.2 2.8.1 3.1.7.8 1.2 1.8 1.2 3.1 0 4.5-2.7 5.5-5.3 5.8.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A11.5 11.5 0 0 0 23.5 12C23.5 5.7 18.3.5 12 .5z'/%3E%3C/svg%3E")}
+        .fa-play-circle{--i:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='1.9' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='9'/%3E%3Cpath d='M10 8.5l6 3.5-6 3.5z'/%3E%3C/svg%3E")}
+        .fa-seedling{--i:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='1.9' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 21v-8'/%3E%3Cpath d='M12 13C12 9 9 6 4 6c0 5 3 7 8 7z'/%3E%3Cpath d='M12 13c0-4 3-7 8-7 0 5-3 7-8 7z'/%3E%3C/svg%3E")}
+        .fa-comments{--i:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='1.9' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M8 10h9M8 14h6'/%3E%3Cpath d='M21 12a8 8 0 0 1-8 8H8l-5 4V12a8 8 0 0 1 8-8h2a8 8 0 0 1 8 8z'/%3E%3C/svg%3E")}
+        .fa-robot{--i:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='1.9' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='4' y='7' width='16' height='11' rx='3'/%3E%3Cpath d='M12 3v4'/%3E%3Ccircle cx='9' cy='12.5' r='1.2'/%3E%3Ccircle cx='15' cy='12.5' r='1.2'/%3E%3Cpath d='M9.5 15.5h5'/%3E%3C/svg%3E")}
+        .fa-code{--i:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='1.9' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M9 6l-6 6 6 6M15 6l6 6-6 6'/%3E%3C/svg%3E")}
+        .fa-sitemap{--i:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='1.9' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='9' y='2' width='6' height='5' rx='1.5'/%3E%3Crect x='2' y='17' width='6' height='5' rx='1.5'/%3E%3Crect x='16' y='17' width='6' height='5' rx='1.5'/%3E%3Cpath d='M12 7v4M5 17v-3h14v3'/%3E%3C/svg%3E")}
+        .fa-toolbox{--i:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='1.9' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3 10h18v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z'/%3E%3Cpath d='M9 10V6a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v4'/%3E%3Cpath d='M3 14h18'/%3E%3C/svg%3E")}
+        .fa-arrow-right{--i:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='1.9' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 12h15M13 6l6 6-6 6'/%3E%3C/svg%3E")}
+        .fa-sync-alt{--i:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='1.9' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20.5 11A8.5 8.5 0 0 0 6 5.5M3.5 13A8.5 8.5 0 0 0 18 18.5'/%3E%3Cpath d='M6 2.5v4h4M18 21.5v-4h-4'/%3E%3C/svg%3E")}
+            .dg-c{text-anchor:middle;dominant-baseline:central}
+        .dg-t{font-size:14px;font-weight:500}
+        .dg-s{font-size:12px;font-weight:400}
+        .dg-l{font-size:13px;font-weight:500;fill:#64748b}
+        .dg-n{font-size:11px;font-weight:400;fill:#94a3b8}
+        .dg-r{stroke-width:0.5}
+        .dg-lane{fill:#f8fafc;stroke:#e2e8f0;stroke-width:0.5}
+        .dg-a{fill:none;stroke:#94a3b8;stroke-width:1.5}
+        .dg-f{fill:none;stroke:#cbd5e1;stroke-width:0.5;stroke-dasharray:5 4}
+    </style>
     <style>
         :root {
             --primary: #2563eb;       --primary-dark: #1d4ed8;
+            --accent: #38bdf8;        --accent-dark: #0ea5e9;
             --dark: #0f172a;          --light: #f8fafc;
             --gray: #64748b;          --gray-light: #e2e8f0;
             --radius: 8px;            --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            --shadow-lg: 0 10px 30px rgba(15, 118, 230, 0.12);
             --transition: all 0.3s ease;
         }
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -21,11 +54,72 @@
             max-width: 1200px; margin: 0 auto; padding: 0 2rem 3rem;
             min-height: 100vh; display: flex; flex-direction: column;
         }
+
+        /* === 背景纹理 === */
+        /* Hero 区：淡蓝渐变 + 雪花叶纹水印 + 节点连线 */
+        .hero {
+            position: relative;
+            text-align: center;
+            padding: 5rem 1rem 4rem;
+            background:
+                radial-gradient(ellipse at top, rgba(56, 189, 248, 0.10) 0%, transparent 60%),
+                linear-gradient(180deg, #f0f9ff 0%, #ffffff 100%);
+            overflow: hidden;
+        }
+        /* === 背景图层：首帧一律不加载，页面显示完成后由 html.bg-ready 挂上 === */
+        .hero::before,
+        .hero::after {
+            content: "";
+            position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.6s ease;
+        }
+        .hero::after {
+            background-image:
+                radial-gradient(circle at 1px 1px, rgba(37, 99, 235, 0.15) 1px, transparent 0);
+            background-size: 32px 32px;
+        }
+        html.bg-ready .hero::after { opacity: 0.5; }
+        html.bg-ready .hero::before {
+            background-image: url("logo.png");
+            background-size: 320px 320px;
+            background-position: center 30px;
+            background-repeat: no-repeat;
+            opacity: 0.06;
+        }
+        .hero > * { position: relative; z-index: 1; }
+
+        /* 节点连线背景（网状）：内容显示后再渲染 */
+        .hero-nodes {
+            position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+            pointer-events: none; z-index: 0;
+            display: none;
+        }
+        html.bg-ready .hero-nodes { display: block; opacity: 0.4; }
+        .hero-nodes svg { width: 100%; height: 100%; }
+
         .navbar {
             display: flex; justify-content: space-between; align-items: center;
-            padding: 1.5rem 0; border-bottom: 1px solid var(--gray-light);
+            padding: 1.2rem 0; border-bottom: 1px solid var(--gray-light);
+            background: rgba(255, 255, 255, 0.85);
+            position: sticky; top: 0; z-index: 10;
         }
-        .logo { font-size: 1.8rem; font-weight: 700; color: var(--primary); text-decoration: none; }
+        /* 毛玻璃是昂贵的合成层，等内容先出来再开 */
+        html.bg-ready .navbar {
+            -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
+        }
+        .logo {
+            display: flex; align-items: center; gap: 0.6rem;
+            font-size: 1.4rem; font-weight: 700; color: var(--primary);
+            text-decoration: none;
+        }
+        .logo img {
+            width: 36px; height: 36px; border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(37, 99, 235, 0.25);
+            transition: transform 0.3s;
+        }
+        .logo:hover img { transform: rotate(-8deg) scale(1.05); }
         .lang-switcher {
             display: flex; align-items: center; gap: 0.5rem;
             padding: 0.5rem 1rem; background: var(--light);
@@ -34,12 +128,9 @@
             transition: var(--transition);
         }
         .lang-switcher:hover { background: #e2e8f0; }
-        .hero {
-            text-align: center; padding: 5rem 1rem 3rem;
-        }
         .hero h1 {
             font-size: 3.5rem; margin-bottom: 1rem; line-height: 1.2;
-            background: linear-gradient(90deg, var(--primary), #7c3aed);
+            background: linear-gradient(90deg, var(--primary), var(--accent-dark), #7c3aed);
             -webkit-background-clip: text; background-clip: text; color: transparent;
         }
         @media (max-width: 768px) { .hero h1 { font-size: 2.5rem; } }
@@ -57,16 +148,33 @@
             background: var(--primary); color: white; padding: 0.9rem 2rem;
             text-decoration: none; border-radius: var(--radius); font-weight: 600;
             margin: 0.5rem; transition: var(--transition); border: 2px solid transparent;
+            box-shadow: 0 2px 8px rgba(37, 99, 235, 0.2);
         }
-        .btn:hover { background: var(--primary-dark); transform: translateY(-2px); }
+        .btn:hover { background: var(--primary-dark); transform: translateY(-2px); box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3); }
         .btn-outline {
             background: transparent; color: var(--primary); border-color: var(--primary);
         }
         .btn-outline:hover { background: var(--primary); color: white; }
+
         .paradigm {
+            position: relative;
             background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
-            border-left: 4px solid var(--primary); padding: 2.5rem;
+            border-left: 4px solid var(--primary);
+            padding: 2.5rem;
             margin: 3rem 0; border-radius: 0 var(--radius) var(--radius) 0;
+            overflow: hidden;
+        }
+        .paradigm::after {
+            content: "";
+            position: absolute; right: -30px; top: 50%; transform: translateY(-50%);
+            width: 200px; height: 200px;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.6s ease;
+        }
+        html.bg-ready .paradigm::after {
+            background: url("logo.png") center/contain no-repeat;
+            opacity: 0.05;
         }
         .paradigm h2 { color: var(--primary-dark); margin-bottom: 1.5rem; }
         .core-concept { margin: 3rem 0; }
@@ -82,7 +190,7 @@
         }
         .concept-card.platform { border-top-color: #10b981; }
         .concept-card.language { border-top-color: #8b5cf6; }
-        .concept-card:hover { transform: translateY(-5px); }
+        .concept-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); }
         .concept-card i { font-size: 2.5rem; margin-bottom: 1rem; }
         .concept-card.platform i { color: #10b981; }
         .concept-card.language i { color: #8b5cf6; }
@@ -97,7 +205,7 @@
             background: var(--light); padding: 1.8rem; border-radius: var(--radius);
             box-shadow: var(--shadow); transition: var(--transition); text-align: center;
         }
-        .highlight-card:hover { transform: translateY(-3px); }
+        .highlight-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
         .highlight-card i { font-size: 2.2rem; color: var(--primary); margin-bottom: 1rem; }
         .highlight-card h3 { font-size: 1.3rem; margin-bottom: 0.8rem; }
         footer {
@@ -107,295 +215,429 @@
         .footer-links { margin: 1.5rem 0; }
         .footer-links a { color: var(--gray); margin: 0 1rem; text-decoration: none; }
         .footer-links a:hover { color: var(--primary); text-decoration: underline; }
+
+        /* 屏幕外的章节延迟渲染：首屏只画首屏 */
+        @supports (content-visibility: auto) {
+            .lang-content section + section,
+            .lang-content > div > section {
+                content-visibility: auto;
+                contain-intrinsic-size: auto 700px;
+            }
+        }
     </style>
 </head>
-<body>
-    <nav class="navbar">
-        <a href="#" class="logo">支叶•融合</a>
-        <div class="lang-switcher" id="langSwitch">
-            <i class="fas fa-globe"></i>
-            <span id="currentLangText">English</span>
+<body data-page-node-id="tOUedaqkly2oQmmHnSAQnX">
+    <nav class="navbar" data-page-node-id="XJpPzU94bKXPKvYrBEVJ7n">
+        <a href="#" class="logo" data-page-node-id="S7aJe42ennZQ4uE1YkRQVx">
+            <img src="logo.png" alt="支叶" data-page-node-id="UkwJB7r8lXi4YJwlTNDfbX">
+            <span data-page-node-id="PYLqT7PauaOEiaHVpGLAxE">支叶•融合</span>
+        </a>
+        <div class="lang-switcher" id="langSwitch" data-page-node-id="rbGo6UEEFL1NW3czNFepUL">
+            <i class="fas fa-globe" data-page-node-id="m0tm1t3z4nKNJBBXoepJPg"></i>
+            <span id="currentLangText" data-page-node-id="5Uugi9TxoAzqiAeyIvUgQW">English</span>
         </div>
     </nav>
 
-    <main>
+    <main data-page-node-id="xA7MmqaWDLyojHKnXSohEK">
         <!-- 中文内容 -->
-        <div class="lang-content" id="lang-zh">
-            <section class="hero">
-                <h1>支叶平台</h1>
-                <p class="tagline">会学习的人机交互内核，及其可教学的语言接口——Y语言</p>
-                <p class="slogan">无需重新编译，用对话赋予机器新能力</p>
-                <div class="cta-buttons">
-                    <a href="https://gitee.com/sz-ai/nlurh" class="btn" id="btnGitHub">
-                        <i class="fab fa-github"></i> Gitee 仓库
+        <div class="lang-content" id="lang-zh" data-page-node-id="iDYQqubPdp6xLm0DmwdArr">
+            <section class="hero" data-page-node-id="hfNrF0Cyd2D5LjgSGo2lT1">
+                <div class="hero-nodes" data-page-node-id="Vwqi7Vr0PchoQhL8G0gDrX">
+                    <svg viewBox="0 0 1200 400" xmlns="http://www.w3.org/2000/svg" data-page-node-id="KHyNT5SgKxIzztFDSZUZuH">
+                        <g fill="#2563eb" stroke="none" data-page-node-id="ciTFEQD08vydkpCIsH1ZYh">
+                            <circle cx="100" cy="80" r="3" opacity="0.5" data-page-node-id="1J9HWVxmae3eSkR18Ww9Uf"/>
+                            <circle cx="200" cy="40" r="2" opacity="0.4" data-page-node-id="u1DzZ8pA1V0rUl6Oj71nci"/>
+                            <circle cx="350" cy="120" r="3" opacity="0.5" data-page-node-id="5ERFiQlwQ7Q0MFzizvvKIO"/>
+                            <circle cx="500" cy="60" r="2" opacity="0.4" data-page-node-id="JJ1AUsFWnBzKNhyeZlxQus"/>
+                            <circle cx="650" cy="100" r="3" opacity="0.5" data-page-node-id="Vu1POmkHkFTWazOqYjEeB1"/>
+                            <circle cx="800" cy="50" r="2" opacity="0.4" data-page-node-id="fg3FzrN2CeFGhNIjkOQ38I"/>
+                            <circle cx="950" cy="130" r="3" opacity="0.5" data-page-node-id="TwRZivHUNScsHLHjsQuSVV"/>
+                            <circle cx="1100" cy="80" r="2" opacity="0.4" data-page-node-id="b93QOuYsj6CltjziBAx30e"/>
+                            <circle cx="150" cy="350" r="2" opacity="0.4" data-page-node-id="fvWySe1UZ8B5VxxxFzPbb6"/>
+                            <circle cx="300" cy="380" r="3" opacity="0.5" data-page-node-id="stCgwNlEbdBbRXv0bWcGKR"/>
+                            <circle cx="450" cy="320" r="2" opacity="0.4" data-page-node-id="NyqC9v9s869F8UNSo3axz9"/>
+                            <circle cx="600" cy="370" r="3" opacity="0.5" data-page-node-id="aGcRfKmv4qRu8p8gs3Oj7V"/>
+                            <circle cx="750" cy="330" r="2" opacity="0.4" data-page-node-id="zlWE2E4MEr3HqpzhS1PzGC"/>
+                            <circle cx="900" cy="380" r="3" opacity="0.5" data-page-node-id="UrNsaPgeom2Vm0GJawGDGq"/>
+                            <circle cx="1050" cy="350" r="2" opacity="0.4" data-page-node-id="ON7Qnw1xZlTtZo5IZV3h86"/>
+                        </g>
+                        <g stroke="#38bdf8" stroke-width="1" fill="none" opacity="0.35" data-page-node-id="CLjy0kcvlcpBxdVWmePYRE">
+                            <line x1="100" y1="80" x2="200" y2="40" data-page-node-id="lATx6XtRZP5VieeiBpVbrX"/>
+                            <line x1="200" y1="40" x2="350" y2="120" data-page-node-id="3XdWGVS0GiEZZgjZjN4ee1"/>
+                            <line x1="350" y1="120" x2="500" y2="60" data-page-node-id="N9QvlgqD5q0RdOWhFV6dNQ"/>
+                            <line x1="500" y1="60" x2="650" y2="100" data-page-node-id="bZSSo5TZ5Xh2h83bSJPcgQ"/>
+                            <line x1="650" y1="100" x2="800" y2="50" data-page-node-id="EVExLE9pUIVPeNEmLORsoN"/>
+                            <line x1="800" y1="50" x2="950" y2="130" data-page-node-id="q9Zza6JA7gYNuM269AIRtI"/>
+                            <line x1="950" y1="130" x2="1100" y2="80" data-page-node-id="MVcCfMSC4pP399FeUey9YU"/>
+                            <line x1="150" y1="350" x2="300" y2="380" data-page-node-id="FIxX5rIb2D57qjHeptAO8C"/>
+                            <line x1="300" y1="380" x2="450" y2="320" data-page-node-id="UAGJxnyAFOT2OSe4ooHVHr"/>
+                            <line x1="450" y1="320" x2="600" y2="370" data-page-node-id="XQumQzbeFlsHGDjjPoFdUa"/>
+                            <line x1="600" y1="370" x2="750" y2="330" data-page-node-id="CeLt0y3YdmoWsoD34XEL2M"/>
+                            <line x1="750" y1="330" x2="900" y2="380" data-page-node-id="l5Zmyy1j73NaTnx2HTFG30"/>
+                            <line x1="900" y1="380" x2="1050" y2="350" data-page-node-id="cQOAL0BgdnopWrudZZSuEc"/>
+                        </g>
+                    </svg>
+                </div>
+                <h1 data-page-node-id="cOodMlfxp1NcUw5uKrfeTc">支叶平台</h1>
+                <p class="tagline" data-page-node-id="vk6qNeTFKDeD32L8haAnLf">会学习的人机交互内核，及其可教学的语言接口——Y语言</p>
+                <p class="slogan" data-page-node-id="EYBgXRfcWP5IP0TVE45cXe">无需重新编译，用对话赋予机器新能力</p>
+                <div class="cta-buttons" data-page-node-id="6ioxqBPUnzRM3WKSPosZau">
+                    <a href="https://gitee.com/sz-ai/nlurh" class="btn" id="btnGitHub" data-page-node-id="g4pkqzsDdAzXcgyO1tBpJV">
+                        <i class="fab fa-github" data-page-node-id="zz4rZQFD4QFX4Ghso1CLN2"></i> Gitee 仓库
                     </a>
-                    <a href="#start" class="btn btn-outline">
-                        <i class="fas fa-play-circle"></i> 立即体验
+                    <a href="#start" class="btn btn-outline" data-page-node-id="BDrVbgXJVUA7JDICkg9rQy">
+                        <i class="fas fa-play-circle" data-page-node-id="9pxlUOxLbRKCFOfiZ5bfp5"></i> 立即体验
                     </a>
                 </div>
             </section>
 
-            <section class="paradigm">
-                <h2>从"编程"到"教学"：一种新的交互范式</h2>
-                <p>传统自动化需要为每个新功能<strong>重新编码与编译</strong>。在支叶平台上，你通过Y语言<strong>"教导"</strong>系统新指令与新逻辑。平台在运行时理解并记住它们，实现交互能力的<strong>持续生长</strong>。</p>
+            <section class="paradigm" data-page-node-id="jwUFzDkLTMgEfGVOsTbgJY">
+                <h2 data-page-node-id="Wn3SCOCnZbliLMXrMY8vKr">从"编程"到"教学"：一种新的交互范式</h2>
+                <p data-page-node-id="KLBBSeTkLb5HhK2fBGAwfW">传统自动化需要为每个新功能<strong data-page-node-id="JKyqjA9SMchY58sEfFgLhJ">重新编码与编译</strong>。在支叶平台上，你通过Y语言<strong data-page-node-id="H4BeWfYOgPzEFJtvkDPFAl">"教导"</strong>系统新指令与新逻辑。平台在运行时理解并记住它们，实现交互能力的<strong data-page-node-id="qbVSCeKEgONotcNJwt71x5">持续生长</strong>。</p>
             </section>
 
-            <section class="core-concept">
-                <h2>核心构成：平台与语言</h2>
-                <div class="concept-grid">
-                    <div class="concept-card platform">
-                        <i class="fas fa-seedling"></i>
-                        <h3>支叶平台</h3>
-                        <p><strong>可学习的交互内核</strong>。提供记忆、执行、多模态感知等基础能力，并能在运行时吸收新知识。</p>
+            <section class="core-concept" data-page-node-id="VuBBk0mYrpeXFN0IxOM9fE">
+                <h2 data-page-node-id="gzG5H42OoQN0vOONU3f9b4">核心构成：平台与语言</h2>
+                <div class="concept-grid" data-page-node-id="kSnx1tHjEczuXigMio2KGi">
+                    <div class="concept-card platform" data-page-node-id="9L9JyaPOmb2S1wKDlwAGc8">
+                        <i class="fas fa-seedling" data-page-node-id="2olwVQKUNh5WMb188waazs"></i>
+                        <h3 data-page-node-id="DMOJ8fN71mCyVyg2vYYtI2">支叶平台</h3>
+                        <p data-page-node-id="ZVCMNEh8p8YBCpk1A5KuNj"><strong data-page-node-id="CJd0tVWGwqhJhaprYrDnhX">可学习的交互内核</strong>。提供记忆、执行、多模态感知等基础能力，并能在运行时吸收新知识。</p>
                     </div>
-                    <div class="concept-card language">
-                        <i class="fas fa-comments"></i>
-                        <h3>Y语言</h3>
-                        <p><strong>平台的动态接口</strong>。不是需要编译的静态语言，而是可被实时"教学"以扩展平台理解的交互协议。</p>
+                    <div class="concept-card language" data-page-node-id="N7CjUTmqvCQKsGEg7pLUSS">
+                        <i class="fas fa-comments" data-page-node-id="ybQA86UcuXfKLrI05RFEfe"></i>
+                        <h3 data-page-node-id="1AgytVIDLUtxZClUUL6Cey">Y语言</h3>
+                        <p data-page-node-id="Dh0q7fsn2kTktox3B9WlK2"><strong data-page-node-id="noKtjJFwCf6LYhT7b9s2y3">平台的动态接口</strong>。不是需要编译的静态语言，而是可被实时"教学"以扩展平台理解的交互协议。</p>
                     </div>
                 </div>
             </section>
 
-            <section class="platform-capabilities">
-                <h2 class="section-title">平台为交互注入的能力</h2>
-                <p style="text-align: center; margin-bottom: 2rem; color: var(--gray);">支叶内核提供的底层能力，通过Y语言直接调用</p>
-                <div class="highlight-grid">
-                    <div class="highlight-card">
-                        <i class="fas fa-brain"></i>
-                        <h3>持续学习</h3>
-                        <p>在交互中实时记忆指令、函数与规则，系统越用越智能。</p>
-                    </div>
-                    <div class="highlight-card">
-                        <i class="fas fa-microchip"></i>
-                        <h3>硬件操控</h3>
-                        <p>直接驱动串口、GPIO等，连接物理世界。已部署于RV1106等设备。</p>
-                    </div>
-                    <div class="highlight-card">
-                        <i class="fas fa-eye"></i>
-                        <h3>多模态感知</h3>
-                        <p>集成视觉(YOLOv5)、语音等感知能力，让机器拥有"感官"。</p>
-                    </div>
-                    <div class="highlight-card">
-                        <i class="fas fa-project-diagram"></i>
-                        <h3>自然语言理解</h3>
-                        <p>解析复杂指令，将其映射为可执行的任务流与函数调用。</p>
-                    </div>
-                </div>
-            </section>
+            
 
-            <section class="platform-capabilities" id="ai-skills">
-                <h2 class="section-title">支叶融合 — 连接 AI 与万物的底座</h2>
-                <p style="text-align: center; margin-bottom: 2rem; color: var(--gray);">一面接入万物（硬件、传感器、设备），一面直连 AI。Y 语言沟通一切，大幅降低行业 AI 门槛，高效无限扩充。</p>
-                <div class="highlight-grid">
-                    <div class="highlight-card">
-                        <i class="fas fa-plug"></i>
-                        <h3>AI 调用支叶</h3>
-                        <p>AI 通过 <strong>Y 语言</strong>直接操控摄像头、串口、UI、语音等全部扩展能力，为 <strong>各行各业具体业务</strong> 快速赋能。</p>
-                    </div>
-                    <div class="highlight-card">
-                        <i class="fas fa-seedling"></i>
-                        <h3>AI 进化支叶</h3>
-                        <p>AI 参照 <strong>C++ 扩展模板</strong> 自己开发、编译、测试、使用新的 DLL，支叶能力边界随 AI 无限生长。</p>
-                    </div>
-                </div>
-                <div style="background: #f1f5f9; padding: 1.5rem; border-radius: var(--radius); margin-top: 1.5rem;">
-                    <h3>接入 AI 助手</h3>
-                    <div style="display: flex; flex-wrap: wrap; gap: 1.5rem; justify-content: center;">
-                        <div style="flex: 1; min-width: 250px; background: white; padding: 1.2rem; border-radius: 6px;">
-                            <i class="fas fa-terminal" style="font-size: 1.5rem; color: #2563eb; margin-bottom: 0.5rem;"></i>
-                            <h4>Claude Code</h4>
-                            <p style="font-size: 0.9rem; color: var(--gray);">终端运行 <code>claude</code>，提到 <strong>支叶</strong> 或 <code>/nlu</code> 加载知识库</p>
+            <section class="platform-capabilities" id="ai-skills" data-page-node-id="08ChsoIMUxLxujs37iVSfQ">
+                <h2 class="section-title" data-page-node-id="3fTSnPUND37ieSj3ead8w6">支叶融合 — 连接 AI 与万物的底座</h2>
+                <p style="text-align: center; margin-bottom: 2rem; color: var(--gray);" data-page-node-id="voSGFAhFHWAQEekOsSXzIv">一面接入万物（硬件、传感器、设备），一面直连 AI。AI 用 Y 语言直接调用支叶全部能力，也能照 C++ 扩展模板自己开发新 DLL，能力边界随 AI 无限生长。</p>
+                
+                <!-- 支叶自带智能体 -->
+                <div style="margin-top: 3rem;" data-page-node-id="HLaKfpALzWgzfoY43Fosg8">
+                    <h3 style="margin-bottom: 0.8rem;" data-page-node-id="TmU8mijBYJqxXTcyKWFa1w">支叶自带智能体 — 平台自己的 AI</h3>
+                    <p style="margin-bottom: 1.5rem; color: var(--gray);" data-page-node-id="ankLwxg2DPI0gIoY4VBgzg">不依赖任何外部工具，支叶自身就是智能体：自己思考、自己写 Y 代码、自己执行、拿结果再修正，直到任务完成。</p>
+                    <div class="highlight-grid" data-page-node-id="e3Fem5vHeaiwCyVZtG2nkm">
+                        <div class="highlight-card" data-page-node-id="koZaKDMZHprsfqYJHIoheG">
+                            <i class="fas fa-robot" data-page-node-id="TtJac8v8CFFE9BDsYGQINP"></i>
+                            <h3 data-page-node-id="EqAXqk7A9opKgMBRlGroQ5">自带 agent 库扩展</h3>
+                            <p data-page-node-id="X53MCyHA00llcDHS65w8cp">agent 带有 <code data-page-node-id="MQSNYV5VsxDpvuAdH3LFWF">open / chat / ctx / feedback</code> 接口。通道句柄相互隔离，多个智能体可并行处理不同任务；<strong data-page-node-id="MfSLmLldLz8upvFwbnB6vM">OpenAI / Claude / Ollama</strong> 三种协议，云端模型与本地模型自由切换。</p>
                         </div>
-                        <div style="flex: 1; min-width: 250px; background: white; padding: 1.2rem; border-radius: 6px;">
-                            <i class="fas fa-robot" style="font-size: 1.5rem; color: #8b5cf6; margin-bottom: 0.5rem;"></i>
-                            <h4>WorkBuddy</h4>
-                            <p style="font-size: 0.9rem; color: var(--gray);">打开 <code>nlurh/</code> 文件夹，提到 <strong>支叶</strong> 即自动加载</p>
+                        <div class="highlight-card" data-page-node-id="TGhDqSs640JdBXhuKGPS21">
+                            <i class="fas fa-code" data-page-node-id="e2bWcABsCv5ioTEliM3Ym2"></i>
+                            <h3 data-page-node-id="rYXSzISCpqCb52bMaRzNn3">会写，也会执行</h3>
+                            <p data-page-node-id="bIhlLgE2f0PGPo9cMHmWlK">模型输出 <code data-page-node-id="50R232DQRKNqD4gPg6WkNK">```y</code> 代码块，支叶用 <code data-page-node-id="lKCk3ppgiG3n7c6MlkDgGQ">runstr</code> 直接执行；<code data-page-node-id="xbskD2U2FrIBCQNsjK7Jwo">agent.feedback</code> 把执行结果回灌，下一轮接着改，形成闭环。</p>
+                        </div>
+                        <div class="highlight-card" data-page-node-id="n26U2ZGFTmwXifCu7JbRWT">
+                            <i class="fas fa-sitemap" data-page-node-id="SssImjpxje3isgqDXiKzkL"></i>
+                            <h3 data-page-node-id="2MUeN3qmrAD9qGg6CmJqu7">多智能体协作</h3>
+                            <p data-page-node-id="moJZg4H6sf9bFAn2rWDBS3"><code data-page-node-id="zytQ3PnueYaKYKn62QcP3A">mqopen / mqsend / mqrecv / mqclose</code> 消息队列：主智能体派活、子智能体回传。阻塞等待零轮询，队列满时新状态覆盖旧状态。</p>
+                        </div>
+                        <div class="highlight-card" data-page-node-id="LCZfpisRRZ1rba46KRBm86">
+                            <i class="fas fa-toolbox" data-page-node-id="WPSgJ8XNnfRJHH1Jsf51LP"></i>
+                            <h3 data-page-node-id="QUztr52gaE2ruJw9mNGRhF">能力即工具</h3>
+                            <p data-page-node-id="6UoEGjZ0i8eEwaQYSAX72R">UI 画布、摄像头、串口、语音、PDF 读写与翻译、文本与 JSON、国密加密、视觉识别——全部以 Y 语言函数暴露，智能体直接调用。</p>
                         </div>
                     </div>
-                    <p style="text-align: center; margin-top: 1rem; font-size: 0.85rem; color: var(--gray);">项目内置 <strong>Skill 文件</strong>（<code>.claude/skills/</code> 和 <code>.workbuddy/skills/</code>），从 Gitee 下载后开箱即用，无需配置</p>
+                    
+                </div>
+
+                <p style="text-align: center; margin-top: 1.5rem; font-size: 0.9rem; color: var(--gray);">开发调试支叶本身可用 Claude Code 或 WorkBuddy：打开 <code>nlurh/</code> 文件夹并提到"支叶"即可，内置 Skill 文件开箱即用。</p>
+
+                <div style="background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%); border-left: 4px solid var(--primary); padding: 1.5rem; border-radius: 0 var(--radius) var(--radius) 0; margin-top: 1.5rem;">
+                    <h3>交互视窗（Tauri）—— 图形化运行支叶</h3>
+                    <p style="margin-top: 0.5rem;">专为支叶人机交互开发的 UI 工具。界面上提供的 <strong>agent 按钮</strong>，可方便地从支叶常规交互切换到<strong>智能体交互模式</strong>。</p>
+                    <div style="margin-top: 1.2rem;">
+                        <svg viewBox="28 36 624 448" width="100%" role="img" style="display: block;">
+                            <title>支叶两种交互模式架构图</title>
+                            <desc>模式一：用户输入（Y 语言或自然语言）直接交给支叶内核解析执行，内核驱动电脑终端操作并接收其回传信息，结果在右侧显示。模式二：用户输入进入一个 Y 语言函数（智能体），函数内部调用大模型，执行大模型返回的 Y 代码；当现有能力不足时可开发新功能（写 Y 函数，或写 C++ 扩展）；Y 函数定义即用，C++ 扩展需编译加载；执行过程与结果实时反馈界面并回灌大模型循环，直到大模型判定完成。</desc>
+                            <defs>
+                                <marker id="arrow-zh" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                                    <path d="M2 1L8 5L2 9" class="dg-a" stroke-linecap="round" stroke-linejoin="round"/>
+                                </marker>
+                            </defs>
+                            <rect x="32" y="40" width="616" height="164" rx="12" class="dg-lane"/>
+                            <text x="48" y="58" class="dg-l">模式一 · 人机交互</text>
+                            <rect x="48" y="70" width="118" height="54" rx="8" fill="#F1EFE8" stroke="#888780" class="dg-r"/>
+                            <text x="107" y="90" class="dg-c dg-t" fill="#2C2C2A">用户输入</text>
+                            <text x="107" y="108" class="dg-c dg-s" fill="#5F5E5A">Y 语言或自然语言</text>
+                            <rect x="278" y="70" width="140" height="54" rx="8" fill="#E1F5EE" stroke="#0F6E56" class="dg-r"/>
+                            <text x="348" y="90" class="dg-c dg-t" fill="#04342C">支叶内核</text>
+                            <text x="348" y="108" class="dg-c dg-s" fill="#0F6E56">直接解析执行</text>
+                            <rect x="520" y="70" width="120" height="54" rx="8" fill="#F1EFE8" stroke="#888780" class="dg-r"/>
+                            <text x="580" y="90" class="dg-c dg-t" fill="#2C2C2A">显示结果</text>
+                            <text x="580" y="108" class="dg-c dg-s" fill="#5F5E5A">结果呈现</text>
+                            <rect x="278" y="140" width="140" height="54" rx="8" fill="#E6F1FB" stroke="#185FA5" class="dg-r"/>
+                            <text x="348" y="160" class="dg-c dg-t" fill="#042C53">电脑 / 终端</text>
+                            <text x="348" y="178" class="dg-c dg-s" fill="#185FA5">窗口 · 文件</text>
+                            <path d="M328,124 V138" class="dg-a" marker-end="url(#arrow-zh)"/>
+                            <path d="M368,138 V126" class="dg-a" marker-end="url(#arrow-zh)"/>
+                            <path d="M168,97 H276" class="dg-a" marker-end="url(#arrow-zh)"/>
+                            <path d="M420,97 H518" class="dg-a" marker-end="url(#arrow-zh)"/>
+                            <rect x="32" y="220" width="616" height="260" rx="12" class="dg-lane"/>
+                            <text x="48" y="238" class="dg-l">模式二 · 智能体交互</text>
+                            <rect x="48" y="272" width="118" height="54" rx="8" fill="#F1EFE8" stroke="#888780" class="dg-r"/>
+                            <text x="107" y="292" class="dg-c dg-t" fill="#2C2C2A">用户输入</text>
+                            <text x="107" y="310" class="dg-c dg-s" fill="#5F5E5A">自然语言指令</text>
+                            <path d="M168,316 H194" class="dg-a" marker-end="url(#arrow-zh)"/>
+                            <rect x="182" y="258" width="320" height="210" rx="10" class="dg-f"/>
+                            <text x="196" y="276" class="dg-l">Y 语言函数：智能体调度</text>
+                            <rect x="196" y="292" width="140" height="48" rx="8" fill="#EEEDFE" stroke="#534AB7" class="dg-r"/>
+                            <text x="266" y="310" class="dg-c dg-t" fill="#26215C">调用大模型</text>
+                            <text x="266" y="328" class="dg-c dg-s" fill="#534AB7">（由 Y 语言调用）</text>
+                            <rect x="352" y="292" width="136" height="48" rx="8" fill="#E1F5EE" stroke="#0F6E56" class="dg-r"/>
+                            <text x="420" y="310" class="dg-c dg-t" fill="#04342C">执行 Y 代码</text>
+                            <text x="420" y="328" class="dg-c dg-s" fill="#0F6E56">建函数 / 直调终端</text>
+                            <path d="M338,316 H350" class="dg-a" marker-end="url(#arrow-zh)"/>
+                            <path d="M420,340 V354" class="dg-a" marker-end="url(#arrow-zh)"/>
+                            <rect x="196" y="356" width="292" height="76" rx="8" fill="#E1F5EE" stroke="#0F6E56" class="dg-r"/>
+                            <text x="342" y="374" class="dg-c dg-t" fill="#04342C">开发新功能：</text>
+                            <text x="342" y="398" class="dg-c dg-s" fill="#0F6E56">Y 函数 · 直接扩展</text>
+                            <text x="342" y="418" class="dg-c dg-s" fill="#0F6E56">C/C++ · 编译扩展</text>
+                            <path d="M502,381 H518" class="dg-a" marker-end="url(#arrow-zh)"/>
+                            <path d="M420,432 V452 H266 V340" class="dg-a" stroke-dasharray="5 4" marker-end="url(#arrow-zh)"/>
+                            <text x="343" y="444" text-anchor="middle" class="dg-n">结果回灌 · 循环</text>
+                            <rect x="520" y="354" width="120" height="54" rx="8" fill="#F1EFE8" stroke="#888780" class="dg-r"/>
+                            <text x="580" y="374" class="dg-c dg-t" fill="#2C2C2A">界面提示</text>
+                            <text x="580" y="392" class="dg-c dg-s" fill="#5F5E5A">实时过程与结果</text>
+                            <path d="M490,302 H518" class="dg-a" marker-end="url(#arrow-zh)"/>
+                            <path d="M518,316 H490" class="dg-a" marker-end="url(#arrow-zh)"/>
+                            <rect x="520" y="272" width="120" height="54" rx="8" fill="#E6F1FB" stroke="#185FA5" class="dg-r"/>
+                            <text x="580" y="292" class="dg-c dg-t" fill="#042C53">电脑 / 终端</text>
+                            <text x="580" y="310" class="dg-c dg-s" fill="#185FA5">操作本地环境</text>
+                        </svg>
+                    </div>
                 </div>
             </section>
 
-            <section id="start">
-                <h2 class="section-title">如何开始"教学"？</h2>
-                <div style="display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 3rem; margin: 2.5rem 0;">
-                    <div style="text-align: center; max-width: 200px;">
-                        <div style="font-size: 2.5rem; margin-bottom: 1rem;">1</div>
-                        <h4>运行平台</h4>
-                        <p>启动 <code>_zhiye.exe</code></p>
+            <section id="start" data-page-node-id="9J6ngo2u1CjtuTDdnBwxyA">
+                <h2 class="section-title" data-page-node-id="ooUA3NCN5gYsKainV0h0ML">如何开始"教学"？</h2>
+                <div style="display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 3rem; margin: 2.5rem 0;" data-page-node-id="tUoQJqQAcPVdKrCIcikrvq">
+                    <div style="text-align: center; max-width: 200px;" data-page-node-id="z7qRTfJN27e3mI7AXq1p28">
+                        <div style="font-size: 2.5rem; margin-bottom: 1rem;" data-page-node-id="mwD77H9IpWKU8pkcF8M9CI">1</div>
+                        <h4 data-page-node-id="vMjGO8IikVq0sfQfZslXub">运行平台</h4>
+                        <p data-page-node-id="ujrOYFuZVerl5wZ6J5dLOU">启动 <code data-page-node-id="EO0RgHvwKPbw8harGu4BWu">_zhiye.exe</code></p>
                     </div>
-                    <i class="fas fa-arrow-right" style="font-size: 1.5rem; color: var(--gray);"></i>
-                    <div style="text-align: center; max-width: 200px;">
-                        <div style="font-size: 2.5rem; margin-bottom: 1rem;">2</div>
-                        <h4>用Y语言教学</h4>
-                        <p>输入指令或示例</p>
+                    <i class="fas fa-arrow-right" style="font-size: 1.5rem; color: var(--gray);" data-page-node-id="LwQS5uf7NDyAcMi2E4kDO1"></i>
+                    <div style="text-align: center; max-width: 200px;" data-page-node-id="EXnFoYOm1Uf4NFA8X6tvIx">
+                        <div style="font-size: 2.5rem; margin-bottom: 1rem;" data-page-node-id="Fogys1xHvWiPIt8QPtCSt2">2</div>
+                        <h4 data-page-node-id="8Bc8SYlSrJCtc3JqFCoLOV">用Y语言教学</h4>
+                        <p data-page-node-id="lFlMp5GyxowDJEIeO1FWqR">输入指令或示例</p>
                     </div>
-                    <i class="fas fa-arrow-right" style="font-size: 1.5rem; color: var(--gray);"></i>
-                    <div style="text-align: center; max-width: 200px;">
-                        <div style="font-size: 2.5rem; margin-bottom: 1rem;">3</div>
-                        <h4>平台学习并反馈</h4>
-                        <p>理解、记忆、执行</p>
+                    <i class="fas fa-arrow-right" style="font-size: 1.5rem; color: var(--gray);" data-page-node-id="tsbOcXQvXuQCYIQJLVaEk0"></i>
+                    <div style="text-align: center; max-width: 200px;" data-page-node-id="B1nLRp67rqD2MQbnwpVHBt">
+                        <div style="font-size: 2.5rem; margin-bottom: 1rem;" data-page-node-id="QIw6lxYv8O34n2acWB9nHt">3</div>
+                        <h4 data-page-node-id="3L5BIQYTCknrmYAw4ZhvK4">平台学习并反馈</h4>
+                        <p data-page-node-id="BExcYNRFaPBracywJnfniU">理解、记忆、执行</p>
                     </div>
-                    <i class="fas fa-sync-alt" style="font-size: 1.5rem; color: var(--primary);"></i>
+                    <i class="fas fa-sync-alt" style="font-size: 1.5rem; color: var(--primary);" data-page-node-id="XTD2ddl3vKBHYKdgOFtj0V"></i>
                 </div>
-                <div style="background: #f1f5f9; padding: 1.5rem; border-radius: var(--radius); margin-top: 2rem;">
-                    <h3>立即体验</h3>
-                    <p>进入 <code>nlu_run_32bit</code> 或 <code>nlu_run_64bit</code> 目录，双击运行 "<code>_zhiye.exe</code>"。使用密码 <code>1234</code>，即可开始用自然语言与系统对话。</p>
-                    <p style="margin-top: 1rem;"><strong>资源：</strong> 
-                        <a href="https://gitee.com/sz-ai/nlurh/blob/master/README_zh.md">项目文档</a> · 
-                        <a href="https://gitee.com/sz-ai/nlurh/tree/master/examples">示例</a> · 
-                        <a href="https://gitee.com/sz-ai/nlurh/tree/master/docs">组件集成指南</a> · 
-                        <a href="trademark_zh.html">商标指南</a>
+                <div style="background: #f1f5f9; padding: 1.5rem; border-radius: var(--radius); margin-top: 2rem;" data-page-node-id="ymwXaj0PWwByJdd0XcXwLv">
+                    <h3 data-page-node-id="369B4LZmgMXTkjNOHEl7pR">立即体验</h3>
+                    <p data-page-node-id="8ojOpGA1ET0xtVv4Gk34kO">进入 <code data-page-node-id="o3rbv4NjKkbMcCQgh9hHv5">nlu_run_32bit</code> 或 <code data-page-node-id="1IZIb1vHYdjKFOJoMEO5O5">nlu_run_64bit</code> 目录，双击运行 "<code data-page-node-id="aKJPAfKcZlrIUQpMCps6CQ">_zhiye.exe</code>"。使用密码 <code data-page-node-id="fZyZMDHncHw2OoTLcYE5e8">1234</code>，即可开始用自然语言与系统对话。</p>
+                    <p style="margin-top: 1rem;" data-page-node-id="L3CIj2SBpJKUZQFC95JtdR"><strong data-page-node-id="Zt2xiFd8ARjkCR19ntCwOE">资源：</strong> 
+                        <a href="https://gitee.com/sz-ai/nlurh/blob/master/README_zh.md" data-page-node-id="IfqIzkwoxfvdaKaVGFgMMj">项目文档</a> · 
+                        <a href="https://gitee.com/sz-ai/nlurh/tree/master/examples" data-page-node-id="yDNbQsZB65SPtwa3bS6Dd0">示例</a> · 
+                        <a href="https://gitee.com/sz-ai/nlurh/tree/master/docs" data-page-node-id="FDFUJvd3ETQwH1n9nA48vC">组件集成指南</a> · 
+                        <a href="trademark_zh.html" data-page-node-id="TZRo24CmlMBJk3cbSPSBLI">商标指南</a>
                     </p>
                 </div>
             </section>
         </div>
 
         <!-- 英文内容 -->
-        <div class="lang-content" id="lang-en" style="display: none;">
-            <section class="hero">
-                <h1>Zhiye Platform</h1>
-                <p class="tagline">A learnable human-computer interaction kernel, and its teachable interface — the Y Language</p>
-                <p class="slogan">No recompilation needed. Empower machines through conversation.</p>
-                <div class="cta-buttons">
-                    <a href="https://github.com/zhiye-lang/nlurh" class="btn" id="btnGitHub-en">
-                        <i class="fab fa-github"></i> GitHub Repository
+        <div class="lang-content" id="lang-en" style="display: none;" data-page-node-id="MMRldrLmkOa6rZ9y3aTfrL">
+            <section class="hero" data-page-node-id="cmWUrYTw4ftMFyEBQZO11D">
+                <h1 data-page-node-id="UZN5DAGoHIlI6AkGlbZEv3">Zhiye Platform</h1>
+                <p class="tagline" data-page-node-id="5nGck1mHtIvvLZ59q5Vi6q">A learnable human-computer interaction kernel, and its teachable interface — the Y Language</p>
+                <p class="slogan" data-page-node-id="I2jNj331biLtNfHN4wCHjf">No recompilation needed. Empower machines through conversation.</p>
+                <div class="cta-buttons" data-page-node-id="dBNkIoNEeCoNGlNqlF5oxk">
+                    <a href="https://github.com/zhiye-lang/nlurh" class="btn" id="btnGitHub-en" data-page-node-id="U6rqZuf741MhyxLOy8i2Dw">
+                        <i class="fab fa-github" data-page-node-id="4B3LZNZLZobf2RCZsd1wj5"></i> GitHub Repository
                     </a>
-                    <a href="#start-en" class="btn btn-outline">
-                        <i class="fas fa-play-circle"></i> Try It Now
+                    <a href="#start-en" class="btn btn-outline" data-page-node-id="dwAECfuJgbj2lM6ExN3dhP">
+                        <i class="fas fa-play-circle" data-page-node-id="vZfIvsaAnos9putO1mTSbF"></i> Try It Now
                     </a>
                 </div>
             </section>
 
-            <section class="paradigm">
-                <h2>From "Programming" to "Teaching": A New Interaction Paradigm</h2>
-                <p>Traditional automation requires <strong>re-coding and recompiling</strong> for every new feature. On the Zhiye Platform, you <strong>"teach"</strong> the system new instructions and logic through the Y Language. The platform understands and remembers them at runtime, enabling <strong>continuous growth</strong> of interactive capabilities.</p>
+            <section class="paradigm" data-page-node-id="mw7oMRzXdr338DfYlKShjY">
+                <h2 data-page-node-id="yWk1h87Cs0dOLydbvWxchx">From "Programming" to "Teaching": A New Interaction Paradigm</h2>
+                <p data-page-node-id="3KJsgO4tNuHlOl3Q2FlEgZ">Traditional automation requires <strong data-page-node-id="tpxePNVxVDx7BjLlIFFfvI">re-coding and recompiling</strong> for every new feature. On the Zhiye Platform, you <strong data-page-node-id="hjuIiYHY2p9YsXNBQEXjvy">"teach"</strong> the system new instructions and logic through the Y Language. The platform understands and remembers them at runtime, enabling <strong data-page-node-id="SjLXQT5Y9CdYbTxJAgRPuN">continuous growth</strong> of interactive capabilities.</p>
             </section>
 
-            <section class="core-concept">
-                <h2>Core Components: Platform & Language</h2>
-                <div class="concept-grid">
-                    <div class="concept-card platform">
-                        <i class="fas fa-seedling"></i>
-                        <h3>Zhiye Platform</h3>
-                        <p><strong>The learnable interaction kernel.</strong> Provides foundational capabilities like memory, execution, multimodal perception, and can absorb new knowledge during runtime.</p>
+            <section class="core-concept" data-page-node-id="YDQZN3T0bgXNExXKg5pVCU">
+                <h2 data-page-node-id="f7q7HAOsSZPnXGEz8bOeua">Core Components: Platform & Language</h2>
+                <div class="concept-grid" data-page-node-id="LjSSFAC6MCtxjawW5LMF2C">
+                    <div class="concept-card platform" data-page-node-id="8jRjQBy2ZJu7o5vQqcmjtt">
+                        <i class="fas fa-seedling" data-page-node-id="L8nENOfvvrQwRCsqfV6GHN"></i>
+                        <h3 data-page-node-id="VMZCiTZY5A3HvB6uSFHpUp">Zhiye Platform</h3>
+                        <p data-page-node-id="yEFqkakQjAtIU3ywG7VihA"><strong data-page-node-id="X6F9ZkJV8BwHi2DYAK1syn">The learnable interaction kernel.</strong> Provides foundational capabilities like memory, execution, multimodal perception, and can absorb new knowledge during runtime.</p>
                     </div>
-                    <div class="concept-card language">
-                        <i class="fas fa-comments"></i>
-                        <h3>Y Language</h3>
-                        <p><strong>The platform's dynamic interface.</strong> Not a static language that needs compilation, but an interactive protocol that can be "taught" in real-time to extend the platform's understanding.</p>
+                    <div class="concept-card language" data-page-node-id="Qv2xLhkzzUlMx14hA0Z3dm">
+                        <i class="fas fa-comments" data-page-node-id="Lme8Ixk6SU80lhd0WxQhOx"></i>
+                        <h3 data-page-node-id="j7G6Wt3PgBLZ7GhrPcA1qH">Y Language</h3>
+                        <p data-page-node-id="5gNrFsRyUxE6zp4RsBk89R"><strong data-page-node-id="7FA0U8NcckxYxHY25O3CiV">The platform's dynamic interface.</strong> Not a static language that needs compilation, but an interactive protocol that can be "taught" in real-time to extend the platform's understanding.</p>
                     </div>
                 </div>
             </section>
 
-            <section class="platform-capabilities">
-                <h2 class="section-title">Capabilities Infused by the Platform</h2>
-                <p style="text-align: center; margin-bottom: 2rem; color: var(--gray);">Underlying powers provided by the Zhiye kernel, directly invoked via the Y Language</p>
-                <div class="highlight-grid">
-                    <div class="highlight-card">
-                        <i class="fas fa-brain"></i>
-                        <h3>Continuous Learning</h3>
-                        <p>Memorizes instructions, functions, and rules in real-time during interaction. The system grows smarter with use.</p>
-                    </div>
-                    <div class="highlight-card">
-                        <i class="fas fa-microchip"></i>
-                        <h3>Hardware Control</h3>
-                        <p>Directly drives UART, GPIO, etc., connecting to the physical world. Deployed on devices like RV1106.</p>
-                    </div>
-                    <div class="highlight-card">
-                        <i class="fas fa-eye"></i>
-                        <h3>Multimodal Perception</h3>
-                        <p>Integrates vision (YOLOv5), speech, and other perceptual abilities, giving machines "senses".</p>
-                    </div>
-                    <div class="highlight-card">
-                        <i class="fas fa-project-diagram"></i>
-                        <h3>Natural Language Understanding</h3>
-                        <p>Parses complex instructions, mapping them into executable task flows and function calls.</p>
-                    </div>
-                </div>
-            </section>
+            
 
-            <section class="platform-capabilities" id="ai-skills-en">
-                <h2 class="section-title">Zhiye Convergence — The Bridge Between AI &amp; Everything</h2>
-                <p style="text-align: center; margin-bottom: 2rem; color: var(--gray);">One side connects to everything (hardware, sensors, devices), the other side connects directly to AI. Y Language bridges it all — dramatically lowering the barrier for industry AI, infinitely scalable.</p>
-                <div class="highlight-grid">
-                    <div class="highlight-card">
-                        <i class="fas fa-plug"></i>
-                        <h3>AI Calls Zhiye</h3>
-                        <p>AI uses <strong>Y Language</strong> to directly control cameras, serial ports, UI, speech — <strong>empowering industry-specific business</strong> across every sector.</p>
-                    </div>
-                    <div class="highlight-card">
-                        <i class="fas fa-seedling"></i>
-                        <h3>AI Evolves Zhiye</h3>
-                        <p>AI references the <strong>C++ extension template</strong> to develop, compile, test, and use new DLLs — Zhiye's capability boundary grows infinitely with AI.</p>
-                    </div>
-                </div>
-                <div style="background: #f1f5f9; padding: 1.5rem; border-radius: var(--radius); margin-top: 1.5rem;">
-                    <h3>Connect Your AI Assistant</h3>
-                    <div style="display: flex; flex-wrap: wrap; gap: 1.5rem; justify-content: center;">
-                        <div style="flex: 1; min-width: 250px; background: white; padding: 1.2rem; border-radius: 6px;">
-                            <i class="fas fa-terminal" style="font-size: 1.5rem; color: #2563eb; margin-bottom: 0.5rem;"></i>
-                            <h4>Claude Code</h4>
-                            <p style="font-size: 0.9rem; color: var(--gray);">Run <code>claude</code> in terminal, mention <strong>Zhiye</strong> or type <code>/nlu</code></p>
+            <section class="platform-capabilities" id="ai-skills-en" data-page-node-id="8ZALB0lVh8zknin55u5cG4">
+                <h2 class="section-title" data-page-node-id="4E6pkr6hEL0XC7BUaKGCdM">Zhiye Convergence — The Bridge Between AI &amp; Everything</h2>
+                <p style="text-align: center; margin-bottom: 2rem; color: var(--gray);" data-page-node-id="BOd9O0cE2Rnps6ChFeskx1">One side connects to everything (hardware, sensors, devices), the other face connects straight to AI. AI drives every Zhiye capability through Y Language — and can build new DLLs from the C++ template, so the boundary grows with AI.</p>
+                
+                <!-- Built-in Zhiye Agent -->
+                <div style="margin-top: 3rem;" data-page-node-id="tcAWJetwh9dIpLAJJtfDiH">
+                    <h3 style="margin-bottom: 0.8rem;" data-page-node-id="kpTU1aB5qTQzwIFlZ6ugad">The Built-in Zhiye Agent — AI That Lives in the Platform</h3>
+                    <p style="margin-bottom: 1.5rem; color: var(--gray);" data-page-node-id="zJ8gjiuxUEJWPtk0XFg1AL">No external tooling required — Zhiye <em data-page-node-id="KPHDfi6ppBbf7nB1JMsyeE">is</em> the agent: it thinks, writes Y code, executes it, reads the result, and corrects itself until the job is done.</p>
+                    <div class="highlight-grid" data-page-node-id="YzjXUqLq8GLX3eMnHkKuU2">
+                        <div class="highlight-card" data-page-node-id="MtJ6wfVsO5bzAKfSEXwAaH">
+                            <i class="fas fa-robot" data-page-node-id="LAs91q68xxYA6Ndaf33h8q"></i>
+                            <h3 data-page-node-id="0yju29JdNzFWou8HNuRnxJ">Bundled agent library extension</h3>
+                            <p data-page-node-id="nI7ZQ3L2PV0AEKZqnK50Hp">The agent exposes <code data-page-node-id="pqTOhBq0xiRGAVMM92FvXF">open / chat / ctx / feedback</code> interfaces. Channel handles are isolated, so many agents run different tasks in parallel; <strong data-page-node-id="YvjSdJkaZj2XLXpOTHc5lY">OpenAI / Claude / Ollama</strong> protocols — cloud or local models, switch at will.</p>
                         </div>
-                        <div style="flex: 1; min-width: 250px; background: white; padding: 1.2rem; border-radius: 6px;">
-                            <i class="fas fa-robot" style="font-size: 1.5rem; color: #8b5cf6; margin-bottom: 0.5rem;"></i>
-                            <h4>WorkBuddy</h4>
-                            <p style="font-size: 0.9rem; color: var(--gray);">Open <code>nlurh/</code> folder, mention <strong>Zhiye</strong> to auto-load</p>
+                        <div class="highlight-card" data-page-node-id="fvfvI4aJijmSMTuc5a3XXC">
+                            <i class="fas fa-code" data-page-node-id="8RlYDSfdlkKNb03XBFaXEJ"></i>
+                            <h3 data-page-node-id="BEGV8FXcl7rHwC5AZWuYA0">Writes, and executes</h3>
+                            <p data-page-node-id="1GdJtics7jbM8GUG77LqLy">The model answers with a <code data-page-node-id="swlOYlDPmDLumbH1hcAUgq">```y</code> code block; Zhiye runs it directly via <code data-page-node-id="2RXn2acGOcS2xs3abVRZpA">runstr</code>. <code data-page-node-id="SrXcnLTBy6GF2iWkl6PuV1">agent.feedback</code> feeds the result back, so the next round improves on it — a closed loop.</p>
+                        </div>
+                        <div class="highlight-card" data-page-node-id="K4kuHCx4kIa8tssNYShkDh">
+                            <i class="fas fa-sitemap" data-page-node-id="2rqX0EX1JNdfCd2QSA0wPl"></i>
+                            <h3 data-page-node-id="RfByUHBK6rFvR9uDhkfoIw">Multi-agent collaboration</h3>
+                            <p data-page-node-id="K4ORfvivmPJb5Qu0lrPzzz"><code data-page-node-id="PWCStR63RdYyFiQeb5NpNr">mqopen / mqsend / mqrecv / mqclose</code> message queues: the main agent dispatches, sub-agents report back. Condition-variable blocking, zero polling; when full, the newest state overwrites the oldest.</p>
+                        </div>
+                        <div class="highlight-card" data-page-node-id="RiuprKDbgsFbMfgf9oTB0k">
+                            <i class="fas fa-toolbox" data-page-node-id="pk1r0Vq6HC7JWxArajTL0p"></i>
+                            <h3 data-page-node-id="Mt9u0wRYZbxbOS1wGd1Wos">Capabilities as tools</h3>
+                            <p data-page-node-id="3t2QkneTxgFhV0dtED8oBe">UI canvas, camera, UART, speech, PDF read/write &amp; translation, text and JSON, Chinese national cryptography, vision — all exposed as Y functions the agent calls directly.</p>
                         </div>
                     </div>
-                    <p style="text-align: center; margin-top: 1rem; font-size: 0.85rem; color: var(--gray);">Built-in <strong>Skill files</strong> (<code>.claude/skills/</code> &amp; <code>.workbuddy/skills/</code>) — works out of the box after cloning, no configuration needed</p>
+                    
+                </div>
+
+                <p style="text-align: center; margin-top: 1.5rem; font-size: 0.9rem; color: var(--gray);" data-page-node-id="Rs6dauY2Wx2BkwauteBRqi">To develop and debug Zhiye itself, use Claude Code or WorkBuddy: open the <code>nlurh/</code> folder and mention "Zhiye" — the bundled Skill files work out of the box.</p>
+
+                <div style="background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%); border-left: 4px solid var(--primary); padding: 1.5rem; border-radius: 0 var(--radius) var(--radius) 0; margin-top: 1.5rem;">
+                    <h3>Chat Window (Tauri) — Run Zhiye Graphically</h3>
+                    <p style="margin-top: 0.5rem;">A UI built specifically for Zhiye's human-computer interaction. Its <strong>agent button</strong> switches you from regular interaction to <strong>agent mode</strong> at a click.</p>
+                    <div style="margin-top: 1.2rem;">
+                        <svg viewBox="28 36 624 448" width="100%" role="img" style="display: block;">
+                            <title>Zhiye's two interaction modes</title>
+                            <desc>Mode 1: user input (Y language or plain text) goes straight to the Zhiye kernel, which parses and runs it, drives the terminal and takes back what it returns, with the result shown alongside. Mode 2: user input enters a Y language function (the agent), which calls the LLM, runs the Y code it returns, and can build new capability (Y functions, or C++ extensions — Y functions work immediately, C++ extensions must be compiled and loaded); progress and results stream to the UI and feed back to the LLM in a loop until the LLM decides it is done.</desc>
+                            <defs>
+                                <marker id="arrow-en" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                                    <path d="M2 1L8 5L2 9" class="dg-a" stroke-linecap="round" stroke-linejoin="round"/>
+                                </marker>
+                            </defs>
+                            <rect x="32" y="40" width="616" height="164" rx="12" class="dg-lane"/>
+                            <text x="48" y="58" class="dg-l">Mode 1 · Human interaction</text>
+                            <rect x="48" y="70" width="118" height="54" rx="8" fill="#F1EFE8" stroke="#888780" class="dg-r"/>
+                            <text x="107" y="90" class="dg-c dg-t" fill="#2C2C2A">User input</text>
+                            <text x="107" y="108" class="dg-c dg-s" fill="#5F5E5A">Y or plain text</text>
+                            <rect x="278" y="70" width="140" height="54" rx="8" fill="#E1F5EE" stroke="#0F6E56" class="dg-r"/>
+                            <text x="348" y="90" class="dg-c dg-t" fill="#04342C">Zhiye kernel</text>
+                            <text x="348" y="108" class="dg-c dg-s" fill="#0F6E56">parses and runs</text>
+                            <rect x="520" y="70" width="120" height="54" rx="8" fill="#F1EFE8" stroke="#888780" class="dg-r"/>
+                            <text x="580" y="90" class="dg-c dg-t" fill="#2C2C2A">Show result</text>
+                            <text x="580" y="108" class="dg-c dg-s" fill="#5F5E5A">rendered output</text>
+                            <rect x="278" y="140" width="140" height="54" rx="8" fill="#E6F1FB" stroke="#185FA5" class="dg-r"/>
+                            <text x="348" y="160" class="dg-c dg-t" fill="#042C53">Terminal / PC</text>
+                            <text x="348" y="178" class="dg-c dg-s" fill="#185FA5">files · windows</text>
+                            <path d="M328,124 V138" class="dg-a" marker-end="url(#arrow-en)"/>
+                            <path d="M368,138 V126" class="dg-a" marker-end="url(#arrow-en)"/>
+                            <path d="M168,97 H276" class="dg-a" marker-end="url(#arrow-en)"/>
+                            <path d="M420,97 H518" class="dg-a" marker-end="url(#arrow-en)"/>
+                            <rect x="32" y="220" width="616" height="260" rx="12" class="dg-lane"/>
+                            <text x="48" y="238" class="dg-l">Mode 2 · Agent interaction</text>
+                            <rect x="48" y="272" width="118" height="54" rx="8" fill="#F1EFE8" stroke="#888780" class="dg-r"/>
+                            <text x="107" y="292" class="dg-c dg-t" fill="#2C2C2A">User input</text>
+                            <text x="107" y="310" class="dg-c dg-s" fill="#5F5E5A">natural language</text>
+                            <path d="M168,316 H194" class="dg-a" marker-end="url(#arrow-en)"/>
+                            <rect x="182" y="258" width="320" height="210" rx="10" class="dg-f"/>
+                            <text x="196" y="276" class="dg-l">Y function: agent orchestration</text>
+                            <rect x="196" y="292" width="140" height="48" rx="8" fill="#EEEDFE" stroke="#534AB7" class="dg-r"/>
+                            <text x="266" y="310" class="dg-c dg-t" fill="#26215C">Call the LLM</text>
+                            <text x="266" y="328" class="dg-c dg-s" fill="#534AB7">(invoked by Y)</text>
+                            <rect x="352" y="292" width="136" height="48" rx="8" fill="#E1F5EE" stroke="#0F6E56" class="dg-r"/>
+                            <text x="420" y="310" class="dg-c dg-t" fill="#04342C">Run Y code</text>
+                            <text x="420" y="328" class="dg-c dg-s" fill="#0F6E56">new funcs / direct</text>
+                            <path d="M338,316 H350" class="dg-a" marker-end="url(#arrow-en)"/>
+                            <path d="M420,340 V354" class="dg-a" marker-end="url(#arrow-en)"/>
+                            <rect x="196" y="356" width="292" height="76" rx="8" fill="#E1F5EE" stroke="#0F6E56" class="dg-r"/>
+                            <text x="342" y="374" class="dg-c dg-t" fill="#04342C">Build new capability:</text>
+                            <text x="342" y="398" class="dg-c dg-s" fill="#0F6E56">Y function — extends directly</text>
+                            <text x="342" y="418" class="dg-c dg-s" fill="#0F6E56">C/C++ — extends after compiling</text>
+                            <path d="M502,381 H518" class="dg-a" marker-end="url(#arrow-en)"/>
+                            <path d="M420,432 V452 H266 V340" class="dg-a" stroke-dasharray="5 4" marker-end="url(#arrow-en)"/>
+                            <text x="343" y="444" text-anchor="middle" class="dg-n">feed back · loop</text>
+                            <rect x="520" y="354" width="120" height="54" rx="8" fill="#F1EFE8" stroke="#888780" class="dg-r"/>
+                            <text x="580" y="374" class="dg-c dg-t" fill="#2C2C2A">UI feedback</text>
+                            <text x="580" y="392" class="dg-c dg-s" fill="#5F5E5A">live progress</text>
+                            <path d="M490,302 H518" class="dg-a" marker-end="url(#arrow-en)"/>
+                            <path d="M518,316 H490" class="dg-a" marker-end="url(#arrow-en)"/>
+                            <rect x="520" y="272" width="120" height="54" rx="8" fill="#E6F1FB" stroke="#185FA5" class="dg-r"/>
+                            <text x="580" y="292" class="dg-c dg-t" fill="#042C53">Terminal / PC</text>
+                            <text x="580" y="310" class="dg-c dg-s" fill="#185FA5">local machine</text>
+                        </svg>
+                    </div>
                 </div>
             </section>
 
-            <section id="start-en">
-                <h2 class="section-title">How to Start "Teaching"?</h2>
-                <div style="display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 3rem; margin: 2.5rem 0;">
-                    <div style="text-align: center; max-width: 200px;">
-                        <div style="font-size: 2.5rem; margin-bottom: 1rem;">1</div>
-                        <h4>Run the Platform</h4>
-                        <p>Launch <code>_zhiye.exe</code></p>
+            <section id="start-en" data-page-node-id="8s4B5R2mpoyNd0vtBF4zaf">
+                <h2 class="section-title" data-page-node-id="r2WpYzDDHYPEJLuq0oHau7">How to Start "Teaching"?</h2>
+                <div style="display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 3rem; margin: 2.5rem 0;" data-page-node-id="q755agy7HJT7HF1ZncNgoi">
+                    <div style="text-align: center; max-width: 200px;" data-page-node-id="rStNmG9AlrpEOsYItfFSrv">
+                        <div style="font-size: 2.5rem; margin-bottom: 1rem;" data-page-node-id="N4cR5yCEZ3DoMIdUJHYowx">1</div>
+                        <h4 data-page-node-id="4nplFWOfaILAgCACTWTXTl">Run the Platform</h4>
+                        <p data-page-node-id="ghF1yyBQ37p0mQQMSDZv92">Launch <code data-page-node-id="4m6zZgcxkC26qoxo5Q6O8E">_zhiye.exe</code></p>
                     </div>
-                    <i class="fas fa-arrow-right" style="font-size: 1.5rem; color: var(--gray);"></i>
-                    <div style="text-align: center; max-width: 200px;">
-                        <div style="font-size: 2.5rem; margin-bottom: 1rem;">2</div>
-                        <h4>Teach with Y Language</h4>
-                        <p>Input instructions or examples</p>
+                    <i class="fas fa-arrow-right" style="font-size: 1.5rem; color: var(--gray);" data-page-node-id="N2EsLs4e1RGejANbGGGnMD"></i>
+                    <div style="text-align: center; max-width: 200px;" data-page-node-id="ZXWdHphoCvS7BNRs4pN4R2">
+                        <div style="font-size: 2.5rem; margin-bottom: 1rem;" data-page-node-id="SQAnavUTAKV4dSLhwJYZJw">2</div>
+                        <h4 data-page-node-id="MWQ7WcqOCbIpuW3UdRfK8V">Teach with Y Language</h4>
+                        <p data-page-node-id="JfMfHaF2DvG8Q9uJlfVg7g">Input instructions or examples</p>
                     </div>
-                    <i class="fas fa-arrow-right" style="font-size: 1.5rem; color: var(--gray);"></i>
-                    <div style="text-align: center; max-width: 200px;">
-                        <div style="font-size: 2.5rem; margin-bottom: 1rem;">3</div>
-                        <h4>Platform Learns & Responds</h4>
-                        <p>Understands, remembers, executes</p>
+                    <i class="fas fa-arrow-right" style="font-size: 1.5rem; color: var(--gray);" data-page-node-id="gtxlgEPiZ0LNyR2MD6UiHk"></i>
+                    <div style="text-align: center; max-width: 200px;" data-page-node-id="xSvUNM4t4ndG4NCyBzQDY5">
+                        <div style="font-size: 2.5rem; margin-bottom: 1rem;" data-page-node-id="8JJ3UFOVfcPEu0ZLvFMh3S">3</div>
+                        <h4 data-page-node-id="xBQ5ih8rpfmDWHnr4Wnafy">Platform Learns & Responds</h4>
+                        <p data-page-node-id="gEhTBA0PDyOGuk5upYyk5e">Understands, remembers, executes</p>
                     </div>
-                    <i class="fas fa-sync-alt" style="font-size: 1.5rem; color: var(--primary);"></i>
+                    <i class="fas fa-sync-alt" style="font-size: 1.5rem; color: var(--primary);" data-page-node-id="O78mYtLerZxey2jnc3wgBv"></i>
                 </div>
-                <div style="background: #f1f5f9; padding: 1.5rem; border-radius: var(--radius); margin-top: 2rem;">
-                    <h3>Try It Now</h3>
-                    <p>Navigate to the <code>nlu_run_32bit</code> or <code>nlu_run_64bit</code> directory and double-click "<code>_zhiye.exe</code>". Use the password <code>1234</code> to start conversing with the system in natural language.</p>
-                    <p style="margin-top: 1rem;"><strong>Resources:</strong> 
-                        <a href="https://github.com/zhiye-lang/nlurh/blob/main/README.md">Project README & Full Documentation</a> · 
-                        <a href="https://github.com/zhiye-lang/nlurh/tree/main/examples">Example Code (examples/)</a> · 
-                        <a href="https://github.com/zhiye-lang/nlurh/tree/main/docs">Component Integration Guide (docs/dll)</a> · 
-                        <a href="trademark.html">Trademark Usage Guide</a>
+                <div style="background: #f1f5f9; padding: 1.5rem; border-radius: var(--radius); margin-top: 2rem;" data-page-node-id="8BMQJwpNqS7nLT10rAtJi0">
+                    <h3 data-page-node-id="cyfZMerAwAVe9r80n9caoU">Try It Now</h3>
+                    <p data-page-node-id="VrdwIXGNlE2aHy6eGfCiFO">Navigate to the <code data-page-node-id="Yk0ZBjDAeNtc7WN9CCxNnF">nlu_run_32bit</code> or <code data-page-node-id="BOXjb4wWVIEkkydBLDjuWA">nlu_run_64bit</code> directory and double-click "<code data-page-node-id="VGLt3QnRY5A5to5uD64hCo">_zhiye.exe</code>". Use the password <code data-page-node-id="skjvdUs9L0t4XJyUnZo81p">1234</code> to start conversing with the system in natural language.</p>
+                    <p style="margin-top: 1rem;" data-page-node-id="IaH6OGtoCTTVcc2CFyByV3"><strong data-page-node-id="XRBQ3d1xqIryfRBjBvyFBx">Resources:</strong> 
+                        <a href="https://github.com/zhiye-lang/nlurh/blob/main/README.md" data-page-node-id="mEDTCjlkdg9kNoNyjk2Wky">Project README & Full Documentation</a> · 
+                        <a href="https://github.com/zhiye-lang/nlurh/tree/main/examples" data-page-node-id="SUNQAHzskaGmMrcwyevjGg">Example Code (examples/)</a> · 
+                        <a href="https://github.com/zhiye-lang/nlurh/tree/main/docs" data-page-node-id="9iOaL6OIqxM29ce6fUDNto">Component Integration Guide (docs/dll)</a> · 
+                        <a href="trademark.html" data-page-node-id="wOjyZ4AuGX4qIeNVk9ii4v">Trademark Usage Guide</a>
                     </p>
                 </div>
             </section>
         </div>
     </main>
 
-    <footer>
-        <div class="footer-links">
-            <a href="https://y-lang.org.cn" class="lang-link" data-zh="https://y-lang.org.cn" data-en="https://y-lang.org.cn">中文官网</a>
+    <footer data-page-node-id="Ylad4EadEXIyW5kXlciU0l">
+        <div class="footer-links" data-page-node-id="mhszB8FDBVFgx18yu3aCs5">
+            <a href="https://y-lang.org.cn" class="lang-link" data-zh="https://y-lang.org.cn" data-en="https://y-lang.org.cn" data-page-node-id="hVf6jnbPlcLg2iirg3kEQc">中文官网</a>
             |
-            <a href="https://github.com/zhiye-lang/nlurh" class="lang-link" data-zh="https://gitee.com/sz-ai/nlurh" data-en="https://github.com/zhiye-lang/nlurh">GitHub 项目</a>
+            <a href="https://github.com/zhiye-lang/nlurh" class="lang-link" data-zh="https://gitee.com/sz-ai/nlurh" data-en="https://github.com/zhiye-lang/nlurh" data-page-node-id="vdYF2vSJfDN6dlhAEry5hn">GitHub 项目</a>
             |
-            <a href="mailto:trademark@y-lang.tech" class="lang-link" data-zh="mailto:trademark@y-lang.tech" data-en="mailto:trademark@y-lang.tech">联系我们</a>
+            <a href="mailto:trademark@y-lang.tech" class="lang-link" data-zh="mailto:trademark@y-lang.tech" data-en="mailto:trademark@y-lang.tech" data-page-node-id="ekSSFYuSxb2lpvUD4dO8Yo">联系我们</a>
         </div>
-        <p class="lang-text" data-zh="© 2024 长沙思知信息科技有限公司 · 支叶（Zhiye）平台" data-en="© 2024 Changsha Sizhi Information Technology Co., Ltd. · The Zhiye Platform">
+        <p class="lang-text" data-zh="© 2024 长沙思知信息科技有限公司 · 支叶（Zhiye）平台" data-en="© 2024 Changsha Sizhi Information Technology Co., Ltd. · The Zhiye Platform" data-page-node-id="IE63G5IewdCoyd15YoZ515">
             © 2024 长沙思知信息科技有限公司 · 支叶（Zhiye）平台
         </p>
-        <p class="lang-text" data-zh="构建越用越聪明的交互系统。" data-en="Building interaction systems that grow wiser with use.">
+        <p class="lang-text" data-zh="构建越用越聪明的交互系统。" data-en="Building interaction systems that grow wiser with use." data-page-node-id="gQUByimDrWYbQoTHKvcjMF">
             构建越用越聪明的交互系统。
         </p>
     </footer>
@@ -466,6 +708,39 @@
             const langToApply = currentLang === 'zh-CN' ? 'zh-CN' : 'en';
             switchLanguage(langToApply);
         });
+    </script>
+
+    <script>
+        // 两段式渲染：先把整页内容和文字画出来，空闲后再挂背景图层
+        // （logo 水印 / 网点纹理 / 节点连线 / 导航毛玻璃）
+        (function () {
+            var done = false;
+            function enableBackgrounds() {
+                if (done) return;
+                done = true;
+                document.documentElement.classList.add('bg-ready');
+            }
+            function schedule() {
+                if ('requestIdleCallback' in window) {
+                    requestIdleCallback(enableBackgrounds, { timeout: 800 });
+                } else {
+                    setTimeout(enableBackgrounds, 80);
+                }
+            }
+            function afterFirstPaint() {
+                // 双 rAF：确保首帧已经提交，再叠加背景层
+                requestAnimationFrame(function () {
+                    requestAnimationFrame(schedule);
+                });
+            }
+            if (document.readyState === 'complete') {
+                afterFirstPaint();
+            } else {
+                window.addEventListener('load', afterFirstPaint);
+            }
+            // 兜底：load 迟迟不来也要把背景层挂上
+            setTimeout(enableBackgrounds, 2500);
+        })();
     </script>
 </body>
 </html>
